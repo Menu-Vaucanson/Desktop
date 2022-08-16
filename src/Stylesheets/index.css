@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "Fira Mono Regular";
+	src: url("/public/fonts/FiraMono-Regular.otf");
+}
+
+@font-face {
+	font-family: "Fira Mono Bold";
+	src: url("/public/fonts/FiraMono-Bold.otf");
+}
+
+@font-face {
+	font-family: "Fira Mono Medium";
+	src: url("/public/fonts/FiraMono-Medium.otf");
+}
+
+body {
+	font-family: "Fira Mono Regular";
+	margin: 0;
+	background-color: #403F4C;
+}
