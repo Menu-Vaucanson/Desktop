@@ -30,7 +30,6 @@ function App() {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			console.log('test');
 			if (Percentage < WantedPercentage) {
 				Percentage++;
 				setPercentage(Percentage);
