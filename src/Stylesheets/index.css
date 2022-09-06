@@ -20,14 +20,19 @@ body {
 	overflow-x: hidden;
 }
 
-.Main,
-.app {
+.App {
 	width: 100vw;
 	height: 100vh;
 }
 
+.Main {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	display: flex;
+	justify-content: center;
+}
+
 .MenuBar {
-	height: 8vh;
 	width: 100vw;
 	background-color: #403F4C;
 	display: flex;
@@ -45,10 +50,111 @@ body {
 .SideMenu {
 	position: absolute;
 	background-color: #F5FEF5;
-	height: calc(100vh - 8vh);
+	height: calc(100vh - 3vmax - 1.5vmax);
 	width: 30vw;
-	top: 8vh;
+	top: calc(3vmax + 1.5vmax);
 	transform: translateX(calc(-30vw - 4vw));
 	transition-duration: 300ms;
 	box-shadow: 0.5vw 5vh 5vmax rgba(0, 0, 0, 0.75);
+}
+
+.MenuButton {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 3vmax;
+	height: 3vmax;
+	padding: 0.75vmax;
+}
+
+.MenuButton div {
+	background-color: #3366FE;
+	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
+	height: 0.5vmax;
+	width: 1.5vmax;
+}
+
+.MenuButton div:nth-child(1) {
+	width: 4.5vmax;
+}
+
+.MenuButton div:nth-child(2) {
+	width: 3vmax;
+}
+
+.MenuLogo {
+	width: 3.6vmax;
+	height: 3vmax;
+	padding: 0.75vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.Dish {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.5vmax;
+	padding: 1vh 1vw;
+	max-width: 12vw;
+	text-align: center;
+	font-size: 1vmax;
+	margin: 1vh 0;
+}
+
+.DishTitle {
+	font-family: 'Fira Mono Medium';
+	font-size: 1.2vmax;
+}
+
+.Menus {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 100vw;
+	margin: 3vh;
+}
+
+.Menu {
+	display: flex;
+	flex-direction: column;
+	background-color: #D9D9D9;
+	align-items: center;
+	border: 0.3vmax solid#B3B3B3;
+	border-radius: 0.5vmax;
+	padding: 1vh 1vw;
+	font-size: 1.2vmax;
+	font-weight: bold;
+}
+
+.MenuContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 2vh;
+	font-weight: normal;
+}
+
+.MenuWaiting {
+	margin: auto 0;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+	.Menu:nth-child(4) {
+		display: none;
+	}
+}
+
+@media (max-width: 1000px) {
+	.Menu:nth-child(5) {
+		display: none;
+	}
 }
