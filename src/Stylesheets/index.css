@@ -16,5 +16,39 @@
 body {
 	font-family: "Fira Mono Regular";
 	margin: 0;
+	background-color: #F5FEF5;
+	overflow-x: hidden;
+}
+
+.Main,
+.app {
+	width: 100vw;
+	height: 100vh;
+}
+
+.MenuBar {
+	height: 8vh;
+	width: 100vw;
 	background-color: #403F4C;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.MenuBarTitle {
+	text-shadow: 0 0 2.5vmax #F5FEF5;
+	color: #F5FEF5;
+	font-size: 2.5vmax;
+	margin: 0 auto;
+}
+
+.SideMenu {
+	position: absolute;
+	background-color: #F5FEF5;
+	height: calc(100vh - 8vh);
+	width: 30vw;
+	top: 8vh;
+	transform: translateX(calc(-30vw - 4vw));
+	transition-duration: 300ms;
+	box-shadow: 0.5vw 5vh 5vmax rgba(0, 0, 0, 0.75);
 }

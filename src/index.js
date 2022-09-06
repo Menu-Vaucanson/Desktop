@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './Stylesheets/index.css';
-import App from './App';
+import Main from './Components/Main';
+import MenuBar from './Components/MenuBar';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<App />
+		<div className="App">
+			<MenuBar />
+			<Main />
+		</div >
 	</React.StrictMode>
 );
