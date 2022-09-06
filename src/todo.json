@@ -29,15 +29,15 @@
 	},
 	{
 		"name": "Système de stockage des menus",
-		"state": 0
+		"state": 2
 	},
 	{
 		"name": "Système de stockage des paramètres",
-		"state": 0
+		"state": 2
 	},
 	{
 		"name": "Composants",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Composants mode sombres",
