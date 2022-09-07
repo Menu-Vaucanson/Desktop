@@ -104,25 +104,25 @@ function Menu({ theme }) {
 	useEffect(() => {
 		const isEvening = JSON.parse(window.localStorage.getItem('evening'));
 
-		//const cache = JSON.parse(sessionStorage.getItem('menuCache'));
-		//if (cache) {
-		//	if (!cache.length) {
-		//		if (new Date().getDay() == 6 || new Date().getDay() == 0) {
-		//			cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
-		//		} else {
-		//			setMenu(
-		//				<div className="MenuWaiting">
-		//					<div className="WaitingError">
-		//						Aucun menu à afficher
-		//					</div>
-		//				</div>
-		//			);
-		//			return;
-		//		}
-		//	}
-		//	setMenu(<MenuComp data={cache} />);
-		//	return;
-		//}
+		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
+		if (cache) {
+			if (!cache.length) {
+				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+				} else {
+					setMenu(
+						<div className="MenuWaiting">
+							<div className="WaitingError">
+								Aucun menu à afficher
+							</div>
+						</div>
+					);
+					return;
+				}
+			}
+			setMenu(<MenuComp data={cache} />);
+			return;
+		}
 
 		Promise.all(getMenusDate()).then(data => {
 			const datas = [];

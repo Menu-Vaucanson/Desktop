@@ -18,7 +18,9 @@ function Dish({ data }) {
 
 	return (<div className="Dish" style={css}>
 		<div className="DishTitle">{data.name}</div>
-		{data.content}
+		<div className='DishContent'>
+			{data.content}
+		</div>
 	</div>)
 }
 

@@ -7,7 +7,7 @@ function MenuBar() {
 	const [Active, setActive] = useState(false);
 	return (
 		<div className="MenuBar">
-			<SideMenu state={Active} />
+			<SideMenu state={Active} callback={setActive} />
 			<div className="MenuButton" onClick={() => {
 				setActive(old => { return !old });
 			}}>

@@ -18,6 +18,7 @@ body {
 	margin: 0;
 	background-color: #F5FEF5;
 	overflow-x: hidden;
+	color: black;
 }
 
 .App {
@@ -56,6 +57,32 @@ body {
 	transform: translateX(calc(-30vw - 4vw));
 	transition-duration: 300ms;
 	box-shadow: 0.5vw 5vh 5vmax rgba(0, 0, 0, 0.75);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.SideMenuElement {
+	width: 22vw;
+	padding: 2vh 2vw;
+	background-color: #F5FEF5;
+	border-radius: 0.5vmax;
+	font-size: 1.5vmax;
+	cursor: pointer;
+	color: black;
+}
+
+.SideMenuElementLink {
+	text-decoration: none;
+	margin: 0 2vw;
+	margin-top: 2vh;
+	border-radius: 0.5vmax;
+}
+
+.SideMenuElement:hover {
+	background-color: #D9D9D9;
+	box-shadow: 0 3px 1vmax rgba(0, 0, 0, 0.25);
 }
 
 .MenuButton {
@@ -72,15 +99,15 @@ body {
 	background-color: #3366FE;
 	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
 	height: 0.5vmax;
-	width: 1.5vmax;
+	width: 1.5vw;
 }
 
 .MenuButton div:nth-child(1) {
-	width: 4.5vmax;
+	width: 3.5vw;
 }
 
 .MenuButton div:nth-child(2) {
-	width: 3vmax;
+	width: 2.5vw;
 }
 
 .MenuLogo {
@@ -95,14 +122,19 @@ body {
 .Dish {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	border-radius: 0.5vmax;
 	padding: 1vh 1vw;
 	max-width: 12vw;
-	text-align: center;
-	font-size: 1vmax;
 	margin: 1vh 0;
+	height: 15vh;
+}
+
+.DishContent {
+	font-size: 1vmax;
+	text-align: center;
+	margin: auto 0;
 }
 
 .DishTitle {
@@ -128,6 +160,8 @@ body {
 	padding: 1vh 1vw;
 	font-size: 1.2vmax;
 	font-weight: bold;
+	box-shadow: 0.5vw 1vh 2vmax rgba(0, 0, 0, 0.25);
+	height: max-content;
 }
 
 .MenuContent {
@@ -135,15 +169,31 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 2vh;
+	margin-top: 1vh;
 	font-weight: normal;
+	height: 75vh;
 }
 
 .MenuWaiting {
 	margin: auto 0;
 }
 
+.E404 {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
+.SideMenuClickHanlder {
+	background-color: rgba(0, 0, 0, 0);
+	position: absolute;
+	width: 70vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	z-index: 3;
+	left: 30vw;
+}
 
 
 
