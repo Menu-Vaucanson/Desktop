@@ -21,6 +21,7 @@ function Settings() {
 	function DeleteClick() {
 		setSetting1(0);
 		setSetting2(0);
+		window.sessionStorage.clear();
 		window.localStorage.clear();
 	}
 

@@ -7,6 +7,7 @@ import Menu from './Components/Menu';
 import MenuBar from './Components/MenuBar';
 import E404 from './Components/E404';
 import Settings from './Components/Settings';
+import Informations from './Components/Informations';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 			<MenuBar />
 			<Routes>
 				<Route path="/" element={<Menu />} />
+				<Route path="/Informations" element={<Informations />} />
 				<Route path="/Settings" element={<Settings />} />
 				<Route path="/*" element={<E404 />} />
 			</Routes>
