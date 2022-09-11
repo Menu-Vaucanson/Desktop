@@ -133,14 +133,14 @@ body {
 }
 
 .DishContent {
-	font-size: 1vmax;
+	font-size: medium;
 	text-align: center;
 	margin: auto 0;
 }
 
 .DishTitle {
+	font-size: large;
 	font-family: 'Fira Mono Medium';
-	font-size: 1.2vmax;
 }
 
 .Menus {
@@ -149,6 +149,7 @@ body {
 	justify-content: space-evenly;
 	width: 100vw;
 	margin: 3vh;
+
 }
 
 .Menu {
@@ -156,10 +157,10 @@ body {
 	flex-direction: column;
 	background-color: #D9D9D9;
 	align-items: center;
-	border: 0.3vmax solid#B3B3B3;
+	border: 0.3vw solid#B3B3B3;
 	border-radius: 0.5vmax;
 	padding: 1vh 1vw;
-	font-size: 1.2vmax;
+	font-size: large;
 	font-weight: bold;
 	box-shadow: 0.5vw 1vh 2vmax rgba(0, 0, 0, 0.25);
 	height: max-content;
@@ -264,6 +265,7 @@ body {
 	border-radius: 0.5vmax;
 	width: 22vw;
 	font-size: 1vmax;
+	height: 20vh;
 }
 
 a {
@@ -286,16 +288,34 @@ a {
 	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
-
-
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
 	.Menu:nth-child(4) {
 		display: none;
 	}
+
+	.Dish {
+		max-width: 15vw;
+	}
 }
 
-@media (max-width: 1000px) {
-	.Menu:nth-child(5) {
+@media (max-width: 900px) {
+	.Menu:nth-child(3) {
 		display: none;
+		font-size: 20px;
+	}
+
+	.Dish {
+		max-width: 23vw;
+	}
+}
+
+@media (max-width: 650px) {
+	.Menu:nth-child(2) {
+		display: none;
+		font-size: 20px;
+	}
+
+	.Dish {
+		max-width: 35vw;
 	}
 }
