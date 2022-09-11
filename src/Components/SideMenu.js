@@ -20,8 +20,8 @@ function SideMenu({ state, callback }) {
 	return (
 		<div className="SideMenu" style={css}>
 			<div className='SideMenuClickHanlder' onClick={click} style={css2}></div>
-			<Link className='SideMenuElementLink' to='/' onClick={click}><div className="SideMenuElement">Accueil</div></Link>
-			<Link className='SideMenuElementLink' to='/Settings' onClick={click}><div className="SideMenuElement">Paramètres</div></Link>
+			<Link className='SideMenuElement' to='/' onClick={click}>Accueil</Link>
+			<Link className='SideMenuElement' to='/Settings' onClick={click}>Paramètres</Link>
 		</div>
 	)
 }
