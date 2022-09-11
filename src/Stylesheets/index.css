@@ -275,6 +275,15 @@ a {
 	margin-bottom: 3vh;
 }
 
+.Contact {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+}
+
 
 
 @media (max-width: 600px) {
