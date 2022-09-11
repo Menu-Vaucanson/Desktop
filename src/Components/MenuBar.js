@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import SideMenu from "./SideMenu";
+import { Link } from 'react-router-dom';
 
+import SideMenu from "./SideMenu";
 import Logo from '../Assets/Logo.png';
 
 function MenuBar() {
@@ -15,7 +16,7 @@ function MenuBar() {
 				<div></div>
 				<div></div>
 			</div>
-			<div className="MenuBarTitle">Menu Vaucanson</div>
+			<Link to='/' className="MenuBarTitle">Menu Vaucanson</Link>
 			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'>
 				<img className='MenuLogo' src={Logo} alt='Logo' />
 			</a>
