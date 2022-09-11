@@ -208,7 +208,53 @@ body {
 .Settings {
 	width: 100vw;
 	height: calc(100vh - 3vmax - 1.5vmax);
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.Setting {
+	background-color: #B3B3B3;
+	border-radius: 1vmax;
+	width: 25vw;
+	height: 30vh;
+	padding: 2vh 2vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	margin: 0 5vw;
+	cursor: pointer;
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.25);
+}
+
+.Setting:active {
+	box-shadow: none;
+}
+
+.red {
+	background-color: rgb(255, 94, 94);
+}
+
+.SettingTitle {
+	font-size: 2vmax;
+	font-weight: bold;
+	letter-spacing: 0.2vw;
+}
+
+.SettingDesc {
+	font-size: 1vmax;
+}
+
+.Check {
+	border-radius: 1vmax;
+	height: 4vmax;
+	width: 4vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
 }
 
 
