@@ -266,6 +266,16 @@ body {
 	height: 20vh;
 }
 
+.ContactBox {
+	background-color: #D9D9D9;
+	padding: 4vh 4vw;
+	border-radius: 0.5vmax;
+	width: 25vw;
+	font-size: 1vmax;
+	height: 20vh;
+	margin: 0 5vw;
+}
+
 a {
 	color: initial;
 	text-decoration: none;

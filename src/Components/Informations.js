@@ -6,7 +6,7 @@ function InfoBox({ title, desc, contact }) {
 			<Link to={'/Contact'} className="InfoBox">
 				<div className="InfoBoxTitle">{title}</div>
 				{desc}
-			</Link >
+			</Link>
 		)
 	}
 
@@ -22,11 +22,12 @@ function Informations() {
 	const infos = [
 		{
 			title: "Contact",
-			desc: "Vous pouvez nous contacter en cliquant ici."
+			desc: "Vous pouvez nous contacter en cliquant ici.",
+			contact: true
 		},
 		{
 			title: "Qui sommes-nous ?",
-			desc: "Nous sommes des élèves de terminale."
+			desc: "Nous sommes trois élèves en terminale STI2D."
 		},
 		{
 			title: "La réalisation",
