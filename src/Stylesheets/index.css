@@ -127,19 +127,18 @@ body {
 	align-items: center;
 	border-radius: 0.5vmax;
 	padding: 1vh 1vw;
-	max-width: 12vw;
-	margin: 1vh 0;
+	width: 12vw;
 	height: 15vh;
 }
 
 .DishContent {
-	font-size: medium;
+	font-size: 2vh;
 	text-align: center;
 	margin: auto 0;
 }
 
 .DishTitle {
-	font-size: large;
+	font-size: 1.5vmax;
 	font-family: 'Fira Mono Medium';
 }
 
@@ -288,33 +287,36 @@ a {
 }
 
 @media (max-width: 1100px) {
-	.Menu:nth-child(4) {
+	.Menu:nth-child(5) {
 		display: none;
 	}
 
 	.Dish {
-		max-width: 15vw;
+		width: 15vw;
 	}
 }
 
 @media (max-width: 900px) {
-	.Menu:nth-child(3) {
+
+	.Menu:nth-child(4),
+	.Menu:nth-child(5) {
 		display: none;
-		font-size: 20px;
 	}
 
 	.Dish {
-		max-width: 23vw;
+		width: 23vw;
 	}
 }
 
 @media (max-width: 650px) {
-	.Menu:nth-child(2) {
+
+	.Menu:nth-child(3),
+	.Menu:nth-child(4),
+	.Menu:nth-child(5) {
 		display: none;
-		font-size: 20px;
 	}
 
 	.Dish {
-		max-width: 35vw;
+		width: 35vw;
 	}
 }
