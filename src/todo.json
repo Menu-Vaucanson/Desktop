@@ -53,7 +53,7 @@
 	},
 	{
 		"name": "Page de contact",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Page de contact mode sombre",
@@ -77,7 +77,7 @@
 	},
 	{
 		"name": "Page de paramètres",
-		"state": 0
+		"state": 2
 	},
 	{
 		"name": "Page de paramètres mode sombre",
@@ -85,15 +85,15 @@
 	},
 	{
 		"name": "Compatibilité grands écrans",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Compatibilité petits écrans",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Compatibilité des navigateurs",
-		"state": 0
+		"state": 2
 	},
 	{
 		"name": "Nettoyage du code",
