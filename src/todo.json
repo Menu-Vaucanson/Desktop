@@ -25,7 +25,7 @@
 	},
 	{
 		"name": "Structure globale du site",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Système de stockage des menus",
@@ -37,11 +37,11 @@
 	},
 	{
 		"name": "Composants",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Composants mode sombres",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Page d'accueil",
@@ -53,11 +53,11 @@
 	},
 	{
 		"name": "Page de contact",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Page de contact mode sombre",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Page du projet",
@@ -81,7 +81,7 @@
 	},
 	{
 		"name": "Page de paramètres mode sombre",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Compatibilité grands écrans",
