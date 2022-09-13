@@ -75,7 +75,7 @@ body {
 	padding: 2vh 2vw;
 	background-color: #F5FEF5;
 	border-radius: 0.5vmax;
-	font-size: 1.5vmax;
+	font-size: 2.5vh;
 	cursor: pointer;
 	color: black;
 	text-decoration: none;
@@ -236,13 +236,13 @@ body {
 }
 
 .SettingTitle {
-	font-size: 2vmax;
+	font-size: 2.5vmax;
 	font-weight: bold;
 	letter-spacing: 0.2vw;
 }
 
 .SettingDesc {
-	font-size: 1vmax;
+	font-size: 2vh;
 }
 
 .Check {
@@ -269,7 +269,7 @@ body {
 	padding: 4vh 4vw;
 	border-radius: 0.5vmax;
 	width: 22vw;
-	font-size: 1vmax;
+	font-size: 2vh;
 	height: 20vh;
 }
 
@@ -278,7 +278,7 @@ body {
 	padding: 4vh 4vw;
 	border-radius: 0.5vmax;
 	width: 25vw;
-	font-size: 1vmax;
+	font-size: 2vh;
 	height: 20vh;
 	margin: 0 5vw;
 }
@@ -289,7 +289,7 @@ a {
 }
 
 .InfoBoxTitle {
-	font-size: 1.5vmax;
+	font-size: 2.5vh;
 	font-weight: bold;
 	margin-bottom: 3vh;
 }
@@ -302,7 +302,6 @@ a {
 	width: 100vw;
 	height: calc(100vh - 3vmax - 1.5vmax);
 }
-
 
 
 @media (max-width: 1100px) {
@@ -327,6 +326,16 @@ a {
 	}
 }
 
+@media (max-width: 800px) {
+	.InfoBoxTitle {
+		font-size: 2vh;
+	}
+
+	.InfoBox {
+		font-size: 1.5vh;
+	}
+}
+
 @media (max-width: 650px) {
 
 	.Menu:nth-child(3),
@@ -337,5 +346,11 @@ a {
 
 	.Dish {
 		width: 35vw;
+	}
+}
+
+@media (max-width: 600px) {
+	.ContactBox {
+		font-size: 1.7vh;
 	}
 }
