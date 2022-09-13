@@ -27,6 +27,10 @@ body {
 	margin-top: calc(3vmax + 1.5vmax);
 }
 
+.AppDark {
+	background-color: lime;
+}
+
 .Main {
 	width: 100vw;
 	display: flex;

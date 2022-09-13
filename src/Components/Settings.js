@@ -2,11 +2,25 @@ import { useState } from 'react';
 
 import CustomCheck from './CustomCheck';
 
-function Settings() {
-	const [Setting1, setSetting1] = useState(0);
+function Settings({ theme, settheme }) {
+	let defaulttheme = 0;
+	if (theme === 'dark') {
+		defaulttheme = 1;
+	}
+	const [Setting1, setSetting1] = useState(defaulttheme);
 	const [Setting2, setSetting2] = useState(0);
 
 	function DarkClick() {
+		let temp = theme;
+		if (temp == null) {
+			temp = 'light';
+		} else if (temp === 'light') {
+			temp = 'dark';
+		} else {
+			temp = 'light';
+		}
+		window.localStorage.setItem('theme', temp);
+		settheme(temp);
 		setSetting1(old => !old);
 	}
 
@@ -27,7 +41,7 @@ function Settings() {
 
 
 	return (
-		<div className="Settings">
+		<div className={theme === 'dark' ? "Settings SettingsDark" : "Settings"}>
 			<div className="Setting" onClick={DarkClick}>
 				<div className="SettingTitle">Mode sombre</div>
 				<div className="SettingDesc">Un mode <i>dark</i>, pour ceux qui préfèrent le noir...</div>
