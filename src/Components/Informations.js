@@ -50,7 +50,7 @@ function Informations() {
 	return (
 		<div className="Informations">
 			{infos.map((info, i) => {
-				if (i === 0) {
+				if (info.contact) {
 					return <InfoBox key={i} title={info.title} desc={info.desc} contact={true} />
 				}
 				return <InfoBox key={i} title={info.title} desc={info.desc} contact={false} />

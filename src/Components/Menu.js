@@ -102,8 +102,6 @@ function Menu({ theme }) {
 	);
 
 	useEffect(() => {
-		const isEvening = JSON.parse(window.localStorage.getItem('evening'));
-
 		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
 		if (cache) {
 			if (!cache.length) {

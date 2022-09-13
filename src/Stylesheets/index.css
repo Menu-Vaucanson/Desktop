@@ -23,17 +23,19 @@ body {
 
 .App {
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	margin-top: calc(3vmax + 1.5vmax);
 }
 
 .Main {
 	width: 100vw;
-	height: calc(100vh - 3vmax - 1.5vmax);
 	display: flex;
 	justify-content: center;
 }
 
 .MenuBar {
+	position: absolute;
+	top: 0;
 	width: 100vw;
 	background-color: #403F4C;
 	display: flex;
@@ -184,6 +186,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-size: 2vmax;
 }
 
 .SideMenuClickHanlder {
@@ -295,6 +298,8 @@ a {
 	width: 100vw;
 	height: calc(100vh - 3vmax - 1.5vmax);
 }
+
+
 
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {

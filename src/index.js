@@ -12,15 +12,17 @@ import Contact from './Components/Contact';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<BrowserRouter className="App">
+		<BrowserRouter>
 			<MenuBar />
-			<Routes>
-				<Route path="/" element={<Menu />} />
-				<Route path="/Informations" element={<Informations />} />
-				<Route path="/Contact" element={<Contact />} />
-				<Route path="/Settings" element={<Settings />} />
-				<Route path="/*" element={<E404 />} />
-			</Routes>
+			<div className="App">
+				<Routes>
+					<Route path="/" element={<Menu />} />
+					<Route path="/Informations" element={<Informations />} />
+					<Route path="/Contact" element={<Contact />} />
+					<Route path="/Settings" element={<Settings />} />
+					<Route path="/*" element={<E404 />} />
+				</Routes>
+			</div>
 		</BrowserRouter >
-	</React.StrictMode>
+	</React.StrictMode >
 );
