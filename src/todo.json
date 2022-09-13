@@ -85,11 +85,11 @@
 	},
 	{
 		"name": "Compatibilité grands écrans",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Compatibilité petits écrans",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Compatibilité des navigateurs",
@@ -97,14 +97,14 @@
 	},
 	{
 		"name": "Nettoyage du code",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Optimisation",
-		"state": 0
+		"state": 2
 	},
 	{
 		"name": "Publication",
-		"state": 0
+		"state": 1
 	}
 ]
