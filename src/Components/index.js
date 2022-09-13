@@ -11,7 +11,13 @@ import Contact from './Contact';
 
 function Index() {
 
-	const [theme, settheme] = useState(window.localStorage.getItem('theme'));
+	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme')));
+
+	if (theme === 'dark') {
+		document.body.style = 'background-color: #403F4C';
+	} else {
+		document.body.style = 'background-color: #F5FEF5';
+	}
 
 	return (
 		<BrowserRouter>

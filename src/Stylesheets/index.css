@@ -16,7 +16,6 @@
 body {
 	font-family: "Fira Mono Regular";
 	margin: 0;
-	background-color: #F5FEF5;
 	overflow-x: hidden;
 	color: black;
 }
@@ -25,10 +24,6 @@ body {
 	width: 100vw;
 	height: calc(100vh - 3vmax - 1.5vmax);
 	margin-top: calc(3vmax + 1.5vmax);
-}
-
-.AppDark {
-	background-color: lime;
 }
 
 .Main {
@@ -126,6 +121,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-right: 1vw;
 }
 
 .Dish {
@@ -157,7 +153,20 @@ body {
 	align-items: flex-start;
 	justify-content: space-evenly;
 	width: 100vw;
-	margin: 3vh;
+	margin-top: 3vh;
+}
+
+.MenusEvening {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 100vw;
+	margin-top: 3vh;
+}
+
+.AllMenus {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
 .Menu {

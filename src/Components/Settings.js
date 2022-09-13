@@ -7,8 +7,9 @@ function Settings({ theme, settheme }) {
 	if (theme === 'dark') {
 		defaulttheme = 1;
 	}
+
 	const [Setting1, setSetting1] = useState(defaulttheme);
-	const [Setting2, setSetting2] = useState(0);
+	const [Setting2, setSetting2] = useState(JSON.parse(window.localStorage.getItem('evening')));
 
 	function DarkClick() {
 		let temp = theme;
@@ -19,12 +20,17 @@ function Settings({ theme, settheme }) {
 		} else {
 			temp = 'light';
 		}
-		window.localStorage.setItem('theme', temp);
+		window.localStorage.setItem('theme', JSON.stringify(temp));
 		settheme(temp);
 		setSetting1(old => !old);
 	}
 
 	function InterneClick() {
+		let temp = JSON.parse(window.localStorage.getItem('evening'));
+		if (temp == null) {
+			temp = false;
+		}
+		window.localStorage.setItem('evening', JSON.stringify(!temp));
 		setSetting2(old => !old);
 	}
 
@@ -35,6 +41,7 @@ function Settings({ theme, settheme }) {
 	function DeleteClick() {
 		setSetting1(0);
 		setSetting2(0);
+		settheme('light');
 		window.sessionStorage.clear();
 		window.localStorage.clear();
 	}

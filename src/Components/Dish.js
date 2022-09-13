@@ -10,7 +10,7 @@ import yellowDark from '../Themes/Dark/yellowDark';
 
 function Dish({ data, theme }) {
 
-	let css = {}
+	let css = {};
 	if (theme === 'dark') {
 		if (data.styleDark === 'blueDark') {
 			css = blueDark;
