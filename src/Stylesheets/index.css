@@ -1,0 +1,369 @@
+@font-face {
+	font-family: "Fira Mono Regular";
+	src: url("/public/fonts/FiraMono-Regular.otf");
+}
+
+@font-face {
+	font-family: "Fira Mono Bold";
+	src: url("/public/fonts/FiraMono-Bold.otf");
+}
+
+@font-face {
+	font-family: "Fira Mono Medium";
+	src: url("/public/fonts/FiraMono-Medium.otf");
+}
+
+body {
+	font-family: "Fira Mono Regular";
+	margin: 0;
+	overflow-x: hidden;
+	color: black;
+}
+
+.App {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	margin-top: calc(3vmax + 1.5vmax);
+}
+
+.Main {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MenuBar {
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	background-color: #403F4C;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.MenuBarTitle {
+	text-shadow: 0 0 2.5vmax #F5FEF5;
+	color: #F5FEF5;
+	font-size: 2.5vmax;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.SideMenu {
+	position: absolute;
+	background-color: #F5FEF5;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	width: 30vw;
+	top: calc(3vmax + 1.5vmax);
+	transform: translateX(calc(-30vw - 4vw));
+	transition-duration: 300ms;
+	box-shadow: 0.5vw 5vh 5vmax rgba(0, 0, 0, 0.75);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.SideMenuElement {
+	width: 22vw;
+	padding: 2vh 2vw;
+	background-color: #F5FEF5;
+	border-radius: 0.5vmax;
+	font-size: 2.5vh;
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+	margin: 0 2vw;
+	margin-top: 2vh;
+	border-radius: 0.5vmax;
+	box-shadow: none;
+	transition-duration: 200ms;
+}
+
+.SideMenuElement:hover {
+	background-color: #D9D9D9;
+	box-shadow: 0 0.5vh 1vmax rgba(0, 0, 0, 0.25);
+}
+
+.MenuButton {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 3vmax;
+	height: 3vmax;
+	padding: 0.75vmax;
+	cursor: pointer;
+}
+
+.MenuButton div {
+	background-color: #3366FE;
+	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
+	height: 0.5vmax;
+	width: 1.5vw;
+}
+
+.MenuButton div:nth-child(1) {
+	width: 3.5vw;
+}
+
+.MenuButton div:nth-child(2) {
+	width: 2.5vw;
+}
+
+.MenuLogo {
+	width: 3.6vmax;
+	height: 3vmax;
+	padding: 0.75vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1vw;
+}
+
+.Dish {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	border-radius: 0.5vmax;
+	padding: 1vh 1vw;
+	width: 12vw;
+	height: 15vh;
+	background-color: #B3B3B3;
+	border: 0.2vmax solid #F5FEF5;
+}
+
+.DishContent {
+	font-size: 2vh;
+	text-align: center;
+	margin: auto 0;
+}
+
+.DishTitle {
+	font-size: 2.5vh;
+	font-family: 'Fira Mono Medium';
+}
+
+.Menus {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 100vw;
+	margin-top: 3vh;
+}
+
+.MenusEvening {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 100vw;
+	margin-top: 3vh;
+}
+
+.AllMenus {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+}
+
+.Menu {
+	display: flex;
+	flex-direction: column;
+	background-color: #D9D9D9;
+	align-items: center;
+	border: 0.3vw solid#B3B3B3;
+	border-radius: 0.5vmax;
+	padding: 1vh 1vw;
+	font-size: large;
+	font-weight: bold;
+	box-shadow: 0.5vw 1vh 2vmax rgba(0, 0, 0, 0.25);
+	height: max-content;
+}
+
+.MenuContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1vh;
+	font-weight: normal;
+	height: 75vh;
+}
+
+.MenuWaiting {
+	display: flex;
+}
+
+.E404 {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2vmax;
+}
+
+.SideMenuClickHanlder {
+	background-color: rgba(0, 0, 0, 0);
+	position: absolute;
+	width: 70vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	z-index: 3;
+	left: 30vw;
+}
+
+.Settings {
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.Setting {
+	background-color: #B3B3B3;
+	border-radius: 1vmax;
+	width: 25vw;
+	height: 30vh;
+	padding: 2vh 2vw;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	margin: 0 5vw;
+	cursor: pointer;
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.25);
+	transition-duration: 200ms;
+}
+
+.Setting:hover {
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.5);
+}
+
+.red {
+	background-color: rgb(255, 94, 94);
+}
+
+.SettingTitle {
+	font-size: 2.5vmax;
+	font-weight: bold;
+	letter-spacing: 0.2vw;
+}
+
+.SettingDesc {
+	font-size: 2vh;
+}
+
+.Check {
+	border-radius: 1vmax;
+	height: 4vmax;
+	width: 4vmax;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.Informations {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+}
+
+.InfoBox {
+	background-color: #D9D9D9;
+	padding: 4vh 4vw;
+	border-radius: 0.5vmax;
+	width: 22vw;
+	font-size: 2vh;
+	height: 20vh;
+}
+
+.ContactBox {
+	background-color: #D9D9D9;
+	padding: 4vh 4vw;
+	border-radius: 0.5vmax;
+	width: 25vw;
+	font-size: 2vh;
+	height: 20vh;
+	margin: 0 5vw;
+}
+
+a {
+	color: initial;
+	text-decoration: none;
+}
+
+.InfoBoxTitle {
+	font-size: 2.5vh;
+	font-weight: bold;
+	margin-bottom: 3vh;
+}
+
+.Contact {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100vw;
+	height: calc(100vh - 3vmax - 1.5vmax);
+}
+
+
+@media (max-width: 1100px) {
+	.Menu:nth-child(5) {
+		display: none;
+	}
+
+	.Dish {
+		width: 15vw;
+	}
+}
+
+@media (max-width: 900px) {
+
+	.Menu:nth-child(4),
+	.Menu:nth-child(5) {
+		display: none;
+	}
+
+	.Dish {
+		width: 23vw;
+	}
+}
+
+@media (max-width: 800px) {
+	.InfoBoxTitle {
+		font-size: 2vh;
+	}
+
+	.InfoBox {
+		font-size: 1.5vh;
+	}
+}
+
+@media (max-width: 650px) {
+
+	.Menu:nth-child(3),
+	.Menu:nth-child(4),
+	.Menu:nth-child(5) {
+		display: none;
+	}
+
+	.Dish {
+		width: 35vw;
+	}
+}
+
+@media (max-width: 600px) {
+	.ContactBox {
+		font-size: 1.7vh;
+	}
+}
