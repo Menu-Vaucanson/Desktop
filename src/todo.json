@@ -41,7 +41,7 @@
 	},
 	{
 		"name": "Composants mode sombres",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Page d'accueil",
@@ -49,7 +49,7 @@
 	},
 	{
 		"name": "Page d'accueil mode sombre",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Page de contact",
@@ -57,7 +57,7 @@
 	},
 	{
 		"name": "Page de contact mode sombre",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Page du projet",
@@ -81,7 +81,7 @@
 	},
 	{
 		"name": "Page de paramètres mode sombre",
-		"state": 1
+		"state": 2
 	},
 	{
 		"name": "Compatibilité grands écrans",
@@ -97,7 +97,7 @@
 	},
 	{
 		"name": "Nettoyage du code",
-		"state": 0
+		"state": 1
 	},
 	{
 		"name": "Optimisation",
