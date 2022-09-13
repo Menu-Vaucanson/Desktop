@@ -13,7 +13,7 @@ function Settings({ theme, settheme }) {
 	function DarkClick() {
 		let temp = theme;
 		if (temp == null) {
-			temp = 'light';
+			temp = 'dark';
 		} else if (temp === 'light') {
 			temp = 'dark';
 		} else {

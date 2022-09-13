@@ -118,7 +118,7 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuComp data={cache} />);
+			setMenu(<MenuComp data={cache} theme={theme} />);
 			return;
 		}
 
@@ -144,11 +144,11 @@ function Menu({ theme }) {
 					return;
 				}
 			}
-			setMenu(<MenuComp data={datas} />);
+			setMenu(<MenuComp data={datas} theme={theme} />);
 		})
 	}, [theme])
 	return (
-		<div className='Main'>
+		<div className={theme === 'dark' ? 'Main MainDark' : "Main"}>
 			{menu}
 		</div>
 	);

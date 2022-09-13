@@ -19,7 +19,7 @@ function getDate(date) {
 	}
 }
 
-function MenuComp({ data }) {
+function MenuComp({ data, theme }) {
 	const menus = [];
 
 	data.forEach((menu, i) => {
@@ -28,7 +28,7 @@ function MenuComp({ data }) {
 				{getDate(menu.date)}
 				<div className='MenuContent'>
 					{menu.menu.map((dish, i) => {
-						return <Dish data={dish} key={i} />;
+						return <Dish data={dish} key={i} theme={theme} />;
 					})}
 				</div>
 			</div>

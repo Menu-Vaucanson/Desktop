@@ -1,3 +1,38 @@
 .SettingsDark {
 	background-color: #403F4C;
 }
+
+.MenuBarDark {
+	background-color: #D9D9D9;
+}
+
+.MenuBarTitleDark {
+	color: black;
+	text-shadow: 0 0 2.5vmax black;
+}
+
+.SideMenuDark {
+	background-color: #403F4C;
+}
+
+.SideMenuElementDark {
+	background-color: #403F4C;
+	color: #F5FEF5;
+}
+
+.SideMenuElementDark:hover {
+	background-color: #58585f;
+	box-shadow: 0 0.5vh 1vmax rgba(0, 0, 0, 0.25);
+}
+
+.InformationsDark {
+	background-color: #403F4C;
+}
+
+.ContactDark {
+	background-color: #403F4C;
+}
+
+.MainDark {
+	background-color: #403F4C;
+}

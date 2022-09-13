@@ -16,7 +16,7 @@ function InfoBox({ title, desc, link }) {
 	);
 }
 
-function Contact() {
+function Contact({ theme }) {
 	const infos = [
 		{
 			title: "E-mail",
@@ -38,7 +38,7 @@ function Contact() {
 	];
 
 	return (
-		<div className="Contact">
+		<div className={theme === 'dark' ? "Contact ContactDark" : "Contact"}>
 			{infos.map((info, i) => {
 				return <InfoBox key={i} title={info.title} desc={info.desc} link={info.link} />
 			})}

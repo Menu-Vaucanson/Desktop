@@ -15,12 +15,12 @@ function Index() {
 
 	return (
 		<BrowserRouter>
-			<MenuBar />
+			<MenuBar theme={theme} />
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<Menu />} />
-					<Route path="/Informations" element={<Informations />} />
-					<Route path="/Contact" element={<Contact />} />
+					<Route path="/" element={<Menu theme={theme} />} />
+					<Route path="/Informations" element={<Informations theme={theme} />} />
+					<Route path="/Contact" element={<Contact theme={theme} />} />
 					<Route path="/Settings" element={<Settings theme={theme} settheme={settheme} />} />
 					<Route path="/*" element={<E404 />} />
 				</Routes>

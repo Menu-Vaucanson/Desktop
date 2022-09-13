@@ -18,7 +18,7 @@ function InfoBox({ title, desc, contact }) {
 	)
 }
 
-function Informations() {
+function Informations({ theme }) {
 	const infos = [
 		{
 			title: "Contact",
@@ -48,7 +48,7 @@ function Informations() {
 	]
 
 	return (
-		<div className="Informations">
+		<div className={theme === 'dark' ? "Informations InformationsDark" : 'Informations'}>
 			{infos.map((info, i) => {
 				if (info.contact) {
 					return <InfoBox key={i} title={info.title} desc={info.desc} contact={true} />
