@@ -93,7 +93,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
-	width: 3vmax;
+	width: 3.5vmax;
 	height: 3vmax;
 	padding: 0.75vmax;
 	cursor: pointer;
@@ -104,6 +104,7 @@ body {
 	box-shadow: -4px 4px 8px rgba(0, 75, 204, 0.5);
 	height: 0.5vmax;
 	width: 1.5vw;
+	transition-duration: 200ms;
 }
 
 .MenuButton div:nth-child(1) {
@@ -314,6 +315,10 @@ a {
 	flex-wrap: wrap;
 	width: 100vw;
 	height: calc(100vh - 3vmax - 1.5vmax);
+}
+
+.MenuPasted {
+	background-color: #B3B3B3;
 }
 
 
