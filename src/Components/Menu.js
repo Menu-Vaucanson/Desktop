@@ -8,84 +8,89 @@ const url = 'https://menuvox.fr:8080';
 
 function getMenusDate() {
 	const menus = [];
-	const date = new Date();
-	const date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
-	const date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
-	const date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
-	const date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
+	let date = new Date();
+	let date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+	let date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+	let date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
+	let date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
 	switch (date.getDay()) {
 		case 1:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate()));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate()));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate()));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate()));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate()));
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
+			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });
+			menus.push({ 'month': date3.getMonth() + 1, 'day': date3.getDate() });
+			menus.push({ 'month': date4.getMonth() + 1, 'day': date4.getDate() });
 			break;
 
 		case 2:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() - 1));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() - 1));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() - 1));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() - 1));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() - 1));
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
+			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });
+			menus.push({ 'month': date3.getMonth() + 1, 'day': date3.getDate() });
 			break;
 
 		case 3:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() - 2));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() - 2));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() - 2));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() - 2));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() - 2));
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
+			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });
 			break;
 
 		case 4:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() - 3));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() - 3));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() - 3));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() - 3));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() - 3));
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
 			break;
 
 		case 5:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() - 4));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() - 4));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() - 4));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() - 4));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() - 4));
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
 			break;
 
 		case 6:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 2));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 2));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 2));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 2));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 2));
+			date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 2);
+			date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+			date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+			date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
+			date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
+			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });
+			menus.push({ 'month': date3.getMonth() + 1, 'day': date3.getDate() });
+			menus.push({ 'month': date4.getMonth() + 1, 'day': date4.getDate() });
 			break;
 
 		default:
-			menus.push(getMenu(date.getFullYear(), date.getMonth(), date.getDate() + 1));
-			menus.push(getMenu(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1));
-			menus.push(getMenu(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1));
-			menus.push(getMenu(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1));
-			menus.push(getMenu(date4.getFullYear(), date4.getMonth(), date4.getDate() + 1));
+			date = new Date(date.getMonth(), date.getDate() + 1);
+			date1 = new Date(date.getMonth(), date.getDate() + 2);
+			date2 = new Date(date.getMonth(), date.getDate() + 3);
+			date3 = new Date(date.getMonth(), date.getDate() + 4);
+			date4 = new Date(date.getMonth(), date.getDate() + 5);
+			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
+			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
+			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });
+			menus.push({ 'month': date3.getMonth() + 1, 'day': date3.getDate() });
+			menus.push({ 'month': date4.getMonth() + 1, 'day': date4.getDate() });
 			break;
 	}
 	return menus;
 }
 
-function getMenu(year, month, day) {
+function getMenus(menus) {
 	return new Promise(resolve => {
-		axios.get(`${url}/menus/${month + 1}/${day}`).catch(err => {
+		axios.post(`${url}/menus`, { 'days': menus }).catch(err => {
 			console.log(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {
 				resolve(null);
 			} else {
-				const data = response.data.data;
-				data.year = year;
-				data.month = month;
-				data.day = day;
+				let data = response.data.data;
+				data = data.map(d => {
+					const temp = d.data?.date?.split('/');
+					if (typeof temp == 'undefined') return d;
+					d.data.day = parseInt(temp[0]);
+					d.data.month = parseInt(temp[1] - 1);
+					d.data.year = parseInt(temp[2]);
+					return d;
+				});
 				resolve(data);
 			}
 		});
@@ -122,11 +127,11 @@ function Menu({ theme }) {
 			return;
 		}
 
-		Promise.all(getMenusDate()).then(data => {
+		getMenus(getMenusDate()).then(data => {
 			const datas = [];
 			data.forEach(d => {
-				if (d) {
-					datas.push(d);
+				if (!d?.error) {
+					datas.push(d.data);
 				}
 			})
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
