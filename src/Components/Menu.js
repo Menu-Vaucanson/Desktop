@@ -58,11 +58,11 @@ function getMenusDate() {
 			break;
 
 		default:
-			date = new Date(date.getMonth(), date.getDate() + 1);
-			date1 = new Date(date.getMonth(), date.getDate() + 2);
-			date2 = new Date(date.getMonth(), date.getDate() + 3);
-			date3 = new Date(date.getMonth(), date.getDate() + 4);
-			date4 = new Date(date.getMonth(), date.getDate() + 5);
+			date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+			date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+			date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
+			date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
+			date4 = new Date(date3.getFullYear(), date3.getMonth(), date3.getDate() + 1);
 			menus.push({ 'month': date.getMonth() + 1, 'day': date.getDate() });
 			menus.push({ 'month': date1.getMonth() + 1, 'day': date1.getDate() });
 			menus.push({ 'month': date2.getMonth() + 1, 'day': date2.getDate() });

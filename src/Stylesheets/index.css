@@ -191,7 +191,7 @@ body {
 	justify-content: space-between;
 	margin-top: 1vh;
 	font-weight: normal;
-	height: 75vh;
+	gap: 1vh;
 }
 
 .MenuWaiting {

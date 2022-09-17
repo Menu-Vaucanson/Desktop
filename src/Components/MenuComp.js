@@ -48,34 +48,60 @@ function MenuComp({ data, theme }) {
 			Class += ' MenuPasted';
 		}
 
-		menus.push(
-			<div className={Class} key={i}>
-				{getDate(menu.date)}
-				<div className='MenuContent'>
-					{menu.menu.map((dish, i) => {
-						return <Dish data={dish} key={i} theme={theme} />;
-					})}
+		if (menu.error) {
+			if (menu.errorMessage) {
+				menus.push(
+					<div className={Class} key={i}>
+						{getDate(menu.date)}
+						<div className='MenuContent'>
+							{menu.errorMessage}
+						</div>
+					</div>
+				);
+			}
+		} else {
+			menus.push(
+				<div className={Class} key={i}>
+					{getDate(menu.date)}
+					<div className='MenuContent'>
+						{menu.menu?.map((dish, i) => {
+							return <Dish data={dish} key={i} theme={theme} />;
+						})}
+					</div>
 				</div>
-			</div>
-		)
+			);
+		}
 		if (isEvening) {
 			let Class = 'Menu';
 			if (parseInt(menu.date.substring(0, 2)) < new Date().getDate()) {
 				Class += ' MenuPasted';
 			}
-			const dishsEven = [];
-			menu.evening?.forEach((dish, i) => {
-				dishsEven.push(<Dish data={dish} key={i} theme={theme} />);
-			})
-			if (!dishsEven.length) return;
-			menusEvening.push(
-				<div className={Class} key={i}>
-					{getDateEvening(menu.date)}
-					<div className='MenuContent'>
-						{dishsEven}
+			if (menu.errorEvening) {
+				if (menu.errorEveningMessage) {
+					menusEvening.push(
+						<div className={Class} key={i}>
+							{getDate(menu.date)}
+							<div className='MenuContent'>
+								{menu.errorMessage}
+							</div>
+						</div>
+					);
+				}
+			} else {
+				const dishsEven = [];
+				menu.evening?.forEach((dish, i) => {
+					dishsEven.push(<Dish data={dish} key={i} theme={theme} />);
+				})
+				if (!dishsEven.length) return;
+				menusEvening.push(
+					<div className={Class} key={i}>
+						{getDateEvening(menu.date)}
+						<div className='MenuContent'>
+							{dishsEven}
+						</div>
 					</div>
-				</div>
-			)
+				);
+			}
 		}
 	});
 
