@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import SideMenu from "./SideMenu";
-import Logo from '../Assets/Logo.png';
+import Logo from '../Assets/Logo.svg';
 
 function MenuBar({ theme }) {
 	const [Active, setActive] = useState(false);
