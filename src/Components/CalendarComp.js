@@ -1,8 +1,8 @@
 function MonthComp({ callback }) {
 	function change() {
 		const week = document.getElementById("week").value.split('-');
-		const Week = ((parseInt(week[1][1]) * 10) + parseInt(week[1][2]));
-		callback(new Date(getDateOfWeek(Week, week[0])));
+		const Week = getDateOfWeek((parseInt(week[1][1]) * 10) + parseInt(week[1][2]), week[0]);
+		callback(new Date(Week));
 	}
 
 	return (
@@ -14,7 +14,6 @@ function getDateOfWeek(w, y) {
 	var simple = new Date(y, 0, 1 + (w - 1) * 7);
 	var dow = simple.getDay();
 	var ISOweekStart = simple;
-	console.log(y);
 	if (dow <= 4) {
 		ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
 	} else {
