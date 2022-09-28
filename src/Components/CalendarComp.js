@@ -6,7 +6,7 @@ function MonthComp({ callback }) {
 	}
 
 	return (
-		<input onChange={change} className="monthSelection" id="week" type="week" />
+		<input onChange={change} className="MonthSelection" id="week" type="week" />
 	)
 }
 

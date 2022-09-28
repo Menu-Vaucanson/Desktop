@@ -149,7 +149,17 @@ function SelectDate({ theme }) {
                     return;
                 }
             }
-            setMenu(<div><CalendarComp callback={getMenu} /><MenuComp data={datas} theme={theme} /></div>);
+            const date2 = new Date(date).setDate(new Date(date).getDate() + 5);
+            setMenu(
+                <>
+                    <div className='Calendar'>
+                        menu du {new Date(date).toLocaleDateString()} au {new Date(date2).toLocaleDateString()}
+                        <CalendarComp callback={getMenu} />
+                    </div>
+                    <MenuComp data={datas} theme={theme} />
+                </>
+
+            );
         })
         setMenu(
             <div>
