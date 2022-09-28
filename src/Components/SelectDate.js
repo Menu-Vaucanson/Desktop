@@ -136,24 +136,22 @@ function SelectDate({ theme }) {
             })
             sessionStorage.setItem('menuCache', JSON.stringify(datas));
             if (!datas.length) {
-                if (new Date().getDay() === 6 || new Date().getDay() === 0) {
-                    datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
-                } else {
-                    setMenu(
-                        <div className="MenuWaiting">
-                            <div className="WaitingError">
-                                Aucun menu à afficher
-                            </div>
+                setMenu(
+                    <div className="MenuWaiting">
+                        <div className="WaitingError">
+                            Aucun menu à afficher
                         </div>
-                    );
-                    return;
-                }
+                    </div>
+                );
+                return;
             }
-            const date2 = new Date(date).setDate(new Date(date).getDate() + 5);
+            const Months = ['Décembre', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre'];
+            let initialDate = new Date(date);
+            const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 5);
             setMenu(
                 <>
                     <div className='Calendar'>
-                        menu du {new Date(date).toLocaleDateString()} au {new Date(date2).toLocaleDateString()}
+                        menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
                         <CalendarComp callback={getMenu} />
                     </div>
                     <MenuComp data={datas} theme={theme} />
