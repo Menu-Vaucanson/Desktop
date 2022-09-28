@@ -338,7 +338,7 @@ a {
 	align-items: center;
 	justify-content: center;
 	gap: 1vw;
-
+	color: black;
 }
 
 @media (max-width: 1100px) {

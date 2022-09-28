@@ -150,7 +150,7 @@ function SelectDate({ theme }) {
             const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 5);
             setMenu(
                 <>
-                    <div className='Calendar'>
+                    <div className={theme === 'dark' ? 'Calendar CalendarDark' : 'Calendar'}>
                         menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
                         <CalendarComp callback={getMenu} />
                     </div>

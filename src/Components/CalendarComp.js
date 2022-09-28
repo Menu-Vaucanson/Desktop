@@ -1,4 +1,4 @@
-function MonthComp({ callback }) {
+function MonthComp({ callback, theme }) {
 	function change() {
 		const week = document.getElementById("week").value.split('-');
 		const Week = getDateOfWeek((parseInt(week[1][1]) * 10) + parseInt(week[1][2]), week[0]);
@@ -6,7 +6,7 @@ function MonthComp({ callback }) {
 	}
 
 	return (
-		<input onChange={change} className="MonthSelection" id="week" type="week" />
+		<input onChange={change} className={theme === 'dark' ? 'MonthSelection MonthSelectionDark' : 'MonthSelection'} id="week" type="week" />
 	)
 }
 
