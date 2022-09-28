@@ -126,53 +126,9 @@ function getMenus(menus) {
 }
 
 function SelectDate({ theme }) {
-    function getMenu(date) {
-        getMenus(getMenusDate(date)).then(data => {
-            const datas = [];
-            data.forEach(d => {
-                if (!d?.error) {
-                    datas.push(d.data);
-                }
-            })
-            sessionStorage.setItem('menuCache', JSON.stringify(datas));
-            if (!datas.length) {
-                setMenu(
-                    <div className="MenuWaiting">
-                        <div className="WaitingError">
-                            Aucun menu à afficher
-                        </div>
-                    </div>
-                );
-                return;
-            }
-            const Months = ['Décembre', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre'];
-            let initialDate = new Date(date);
-            const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 5);
-            setMenu(
-                <>
-                    <div className={theme === 'dark' ? 'Calendar CalendarDark' : 'Calendar'}>
-                        menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
-                        <CalendarComp callback={getMenu} />
-                    </div>
-                    <MenuComp data={datas} theme={theme} />
-                </>
 
-            );
-        })
-        setMenu(
-            <div>
-                <CalendarComp callback={getMenu} />
-                <div className="MenuWaiting">
-                    <div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
-                        vous regarder le menu du {new Date(date).toLocaleDateString()}
-                    </div>
-                </div >
-            </div>
-        )
-    }
     const [menu, setMenu] = useState(
         <div>
-            <CalendarComp callback={getMenu} />
             <div className="MenuWaiting">
                 <div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
                     Récupération des menus en cours...
@@ -180,6 +136,54 @@ function SelectDate({ theme }) {
             </div >
         </div>
     );
+
+    useEffect(() => {
+        function getMenu(date) {
+            getMenus(getMenusDate(date)).then(data => {
+                const datas = [];
+                data.forEach(d => {
+                    if (!d?.error) {
+                        datas.push(d.data);
+                    }
+                })
+                if (!datas.length) {
+                    setMenu(
+                        <div className="MenuWaiting">
+                            <div className="WaitingError">
+                                Aucun menu à afficher
+                            </div>
+                        </div>
+                    );
+                    return;
+                }
+                const Months = ['Décembre', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre'];
+                let initialDate = new Date(date);
+                const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 5);
+                setMenu(
+                    <>
+                        <div className={theme === 'dark' ? 'Calendar CalendarDark' : 'Calendar'}>
+                            menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
+                            <CalendarComp callback={getMenu} />
+                        </div>
+                        <MenuComp data={datas} theme={theme} />
+                    </>
+
+                );
+            })
+            setMenu(
+                <div>
+                    <CalendarComp callback={getMenu} />
+                    <div className="MenuWaiting">
+                        <div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
+                            vous regarder le menu du {new Date(date).toLocaleDateString()}
+                        </div>
+                    </div >
+                </div>
+            )
+        }
+        getMenu(new Date())
+    }, [theme]);
+
     return (
         menu
     )
