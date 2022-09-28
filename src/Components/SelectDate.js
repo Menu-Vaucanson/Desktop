@@ -137,6 +137,7 @@ function SelectDate({ theme }) {
         </div>
     );
 
+
     useEffect(() => {
         function getMenu(date) {
             getMenus(getMenusDate(date)).then(data => {
@@ -148,9 +149,11 @@ function SelectDate({ theme }) {
                 })
                 if (!datas.length) {
                     setMenu(
-                        <div className="MenuWaiting">
-                            <div className="WaitingError">
-                                Aucun menu à afficher
+                        <div>
+                            <CalendarComp callback={getMenu} /><div className="MenuWaiting">
+                                <div className="WaitingError">
+                                    Aucun menu à afficher
+                                </div>
                             </div>
                         </div>
                     );
@@ -160,13 +163,13 @@ function SelectDate({ theme }) {
                 let initialDate = new Date(date);
                 const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 5);
                 setMenu(
-                    <>
+                    <div>
                         <div className={theme === 'dark' ? 'Calendar CalendarDark' : 'Calendar'}>
                             menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
                             <CalendarComp callback={getMenu} />
                         </div>
                         <MenuComp data={datas} theme={theme} />
-                    </>
+                    </div>
 
                 );
             })
