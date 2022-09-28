@@ -196,6 +196,8 @@ body {
 
 .MenuWaiting {
 	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .E404 {
