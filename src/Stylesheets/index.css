@@ -149,14 +149,6 @@ body {
 	font-family: 'Fira Mono Medium';
 }
 
-.Menus {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-evenly;
-	width: 100vw;
-	margin-top: 3vh;
-}
-
 .MenusEvening {
 	display: flex;
 	align-items: flex-start;
@@ -165,9 +157,11 @@ body {
 	margin-top: 3vh;
 }
 
-.AllMenus {
+.Menus {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
 	width: 100vw;
-	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
 .Menu {
@@ -328,8 +322,10 @@ a {
 	border: none;
 	outline: none;
 	width: 2.1vw;
+	height: 2.1vw;
 	font-size: 2vmax;
 	cursor: pointer;
+	margin-top: 1vh;
 }
 
 .Calendar {

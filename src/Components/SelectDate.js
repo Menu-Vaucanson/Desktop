@@ -150,10 +150,9 @@ function SelectDate({ theme }) {
                 if (!datas.length) {
                     setMenu(
                         <div>
-                            <CalendarComp callback={getMenu} /><div className="MenuWaiting">
-                                <div className="WaitingError">
-                                    Aucun menu à afficher
-                                </div>
+                            <div className="MenuWaiting">
+                                Aucun menu à afficher
+                                <CalendarComp cal lback={getMenu} theme={theme} />
                             </div>
                         </div>
                     );
@@ -165,8 +164,8 @@ function SelectDate({ theme }) {
                 setMenu(
                     <div>
                         <div className={theme === 'dark' ? 'Calendar CalendarDark' : 'Calendar'}>
-                            menu du {initialDate.getDate() + ' ' + Months[initialDate.getMonth()]} au {date2.getDate() + ' ' + Months[date2.getMonth()]}
-                            <CalendarComp callback={getMenu} />
+                            {initialDate.getDate()} {Months[initialDate.getMonth()]} au {date2.getDate()} {Months[date2.getMonth()]}
+                            <CalendarComp callback={getMenu} theme={theme} />
                         </div>
                         <MenuComp data={datas} theme={theme} />
                     </div>
@@ -175,11 +174,11 @@ function SelectDate({ theme }) {
             })
             setMenu(
                 <div>
-                    <CalendarComp callback={getMenu} />
                     <div className="MenuWaiting">
                         <div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
-                            vous regarder le menu du {new Date(date).toLocaleDateString()}
+                            Chargement du {new Date(date).toLocaleDateString()}
                         </div>
+                        <CalendarComp callback={getMenu} theme={theme} />
                     </div >
                 </div>
             )
