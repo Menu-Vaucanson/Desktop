@@ -141,7 +141,14 @@ function Menu({ theme }) {
 		if (cache) {
 			if (!cache.length) {
 				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
-					cache.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+					setMenu(
+						<div className="MenuWaiting">
+							<div className="WaitingError">
+								Bon week-end !
+							</div>
+						</div>
+					);
+					return;
 				} else {
 					setMenu(
 						<div className="MenuWaiting">
@@ -167,7 +174,14 @@ function Menu({ theme }) {
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			if (!datas.length) {
 				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
-					datas.push({ error: 1, errorMessage: 'Bon week-end !', errorEvening: 1, date: new Date().getDate().toString() });
+					setMenu(
+						<div className="MenuWaiting">
+							<div className="WaitingError">
+								Bon week-end !
+							</div>
+						</div>
+					);
+					return;
 				} else {
 					setMenu(
 						<div className="MenuWaiting">

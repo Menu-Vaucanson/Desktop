@@ -196,6 +196,19 @@ body {
 
 .MenuWaiting {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.5vmax;
+	padding: 1vh 1vw;
+	width: 20vw;
+	height: 15vh;
+	background-color: #B3B3B3;
+	border: 0.2vmax solid #F5FEF5;
+	text-align: center;
+}
+
+.WaitingError {
+	font-size: 2vw;
 }
 
 .E404 {
