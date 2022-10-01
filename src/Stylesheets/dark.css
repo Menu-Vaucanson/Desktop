@@ -37,6 +37,14 @@
 	background-color: #403F4C;
 }
 
-.WaitingErrorDark {
+.ExploreTitleDark {
+	color: #F5FEF5;
+}
+
+.MonthSelectionDark {
+	background-color: #D9D9D9;
+}
+
+.CalendarDark {
 	color: #F5FEF5;
 }

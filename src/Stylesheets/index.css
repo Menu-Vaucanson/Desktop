@@ -149,14 +149,6 @@ body {
 	font-family: 'Fira Mono Medium';
 }
 
-.Menus {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-evenly;
-	width: 100vw;
-	margin-top: 3vh;
-}
-
 .MenusEvening {
 	display: flex;
 	align-items: flex-start;
@@ -165,9 +157,11 @@ body {
 	margin-top: 3vh;
 }
 
-.AllMenus {
+.Menus {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-evenly;
 	width: 100vw;
-	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
 .Menu {
@@ -209,6 +203,8 @@ body {
 
 .WaitingError {
 	font-size: 2vw;
+	align-items: center;
+	justify-content: center;
 }
 
 .E404 {
@@ -330,10 +326,39 @@ a {
 	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
+.MonthSelection {
+	border-radius: 0.3vmax;
+	border: none;
+	outline: none;
+	width: 2.1vw;
+	height: 2.1vw;
+	font-size: 2vmax;
+	margin: 1vh 0;
+}
+
+.Calendar {
+	width: 100vw;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	gap: 1vw;
+	color: black;
+}
+
 .MenuPasted {
 	background-color: #B3B3B3;
 }
 
+.ExploreHeaderBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 1.5vmax;
+	margin: 1vh 0;
+	gap: 1vw;
+}
 
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {

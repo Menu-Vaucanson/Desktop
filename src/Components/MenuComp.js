@@ -44,7 +44,8 @@ function MenuComp({ data, theme }) {
 
 	data.forEach((menu, i) => {
 		let Class = 'Menu';
-		if (parseInt(menu.date.substring(0, 2)) < new Date().getDate()) {
+		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
+		if (date.getTime() < new Date().getTime()) {
 			Class += ' MenuPasted';
 		}
 
@@ -73,7 +74,8 @@ function MenuComp({ data, theme }) {
 		}
 		if (isEvening) {
 			let Class = 'Menu';
-			if (parseInt(menu.date.substring(0, 2)) < new Date().getDate()) {
+			const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
+			if (date.getTime() < new Date().getTime()) {
 				Class += ' MenuPasted';
 			}
 			if (menu.errorEvening) {
