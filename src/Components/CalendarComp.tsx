@@ -1,11 +1,11 @@
 function MonthComp({ callback, theme, oldDate }) {
-	function weekNumber(date) {
+	function weekNumber(date: Date) {
 		const firstJanuary = new Date(date.getFullYear(), 0, 1);
-		const dayNr = Math.ceil((date - firstJanuary) / (24 * 60 * 60 * 1000));
+		const dayNr = Math.ceil((date.getTime() - firstJanuary.getTime()) / (24 * 60 * 60 * 1000));
 		return Math.ceil((dayNr + firstJanuary.getDay()) / 7) - 1;
 	}
 
-	function getDateOfWeek(w, y) {
+	function getDateOfWeek(w: number, y: number) {
 		const simple = new Date(y, 0, 1 + (w - 1) * 7);
 		const dow = simple.getDay();
 		const ISOweekStart = simple;
@@ -18,7 +18,7 @@ function MonthComp({ callback, theme, oldDate }) {
 	}
 
 	function change() {
-		const week = document.getElementById("week").value.split('-');
+		const week = (document.getElementById("week") as any).value.split('-');
 		const Week = getDateOfWeek((parseInt(week[1][1]) * 10) + parseInt(week[1][2]), week[0]);
 		callback(new Date(Week));
 	}

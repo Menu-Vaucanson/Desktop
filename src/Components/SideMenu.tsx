@@ -12,7 +12,7 @@ function SideMenu({ state, callback, theme }) {
 	}
 
 	function click() {
-		callback(old => {
+		callback((old: any) => {
 			return !old;
 		})
 	}

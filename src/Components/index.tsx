@@ -1,5 +1,5 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 
 import Menu from './Menu';
@@ -12,11 +12,13 @@ import Explore from './Explore';
 
 function Index() {
 
-	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme')));
+	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
 
 	if (theme === 'dark') {
+		// @ts-ignore
 		document.body.style = 'background-color: #403F4C';
 	} else {
+		// @ts-ignore
 		document.body.style = 'background-color: #F5FEF5';
 	}
 

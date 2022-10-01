@@ -9,7 +9,7 @@ function Settings({ theme, settheme }) {
 	}
 
 	const [Setting1, setSetting1] = useState(defaulttheme);
-	const [Setting2, setSetting2] = useState(JSON.parse(window.localStorage.getItem('evening')));
+	const [Setting2, setSetting2] = useState(JSON.parse(window.localStorage.getItem('evening') as string));
 
 	function DarkClick() {
 		let temp = theme;
@@ -22,11 +22,11 @@ function Settings({ theme, settheme }) {
 		}
 		window.localStorage.setItem('theme', JSON.stringify(temp));
 		settheme(temp);
-		setSetting1(old => !old);
+		setSetting1(old => old ? 0 : 1);
 	}
 
 	function InterneClick() {
-		let temp = JSON.parse(window.localStorage.getItem('evening'));
+		let temp = JSON.parse(window.localStorage.getItem('evening') as string);
 		if (temp == null) {
 			temp = false;
 		}

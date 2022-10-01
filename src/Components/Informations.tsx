@@ -30,8 +30,8 @@ function Informations({ theme }) {
 			desc: "Nous sommes trois élèves en terminale STI2D."
 		},
 		{
-			title: "La réalisation",
-			desc: "Le site est réalisé en HTML, CSS et Javascript avec React. Le code source est disponible sur GitHub."
+			title: "Le code",
+			desc: "Le site est réalisé en HTML, CSS et JavaScript (TypeScript) avec React. Le code source est disponible sur GitHub."
 		},
 		{
 			title: "Des questions ?",

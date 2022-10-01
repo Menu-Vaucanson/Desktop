@@ -1,14 +1,12 @@
-/* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react';
+import CalendarComp from './CalendarComp'
 import axios from 'axios';
-
 import MenuComp from './MenuComp';
 
 const url = 'https://menuvox.fr:8080';
 
-function getMenusDate() {
-	const menus = [];
-	let date = new Date();
+function getMenusDate(date: Date) {
+	const menus: Array<any> = [];
 	let date1 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
 	let date2 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate() + 1);
 	let date3 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate() + 1);
@@ -117,7 +115,7 @@ function getMenus(menus) {
 					const temp = d.data?.date?.split('/');
 					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
-					d.data.month = parseInt(temp[1] - 1);
+					d.data.month = temp[1] - 1;
 					d.data.year = parseInt(temp[2]);
 					return d;
 				});
@@ -127,80 +125,75 @@ function getMenus(menus) {
 	});
 }
 
-function Menu({ theme }) {
+function Explore({ theme }) {
 	const [menu, setMenu] = useState(
-		<div className="MenuWaiting">
-			<div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
+		<div className="ExploreHeaderBox">
+			<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
 				Récupération des menus en cours...
 			</div>
-		</div >
-	);
-
-	useEffect(() => {
-		const cache = JSON.parse(sessionStorage.getItem('menuCache'));
-		if (cache) {
-			if (!cache.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
-					setMenu(
-						<div className="MenuWaiting">
-							<div className="WaitingError">
-								Bon week-end !
-							</div>
-						</div>
-					);
-					return;
-				} else {
-					setMenu(
-						<div className="MenuWaiting">
-							<div className="WaitingError">
-								Aucun menu à afficher
-							</div>
-						</div>
-					);
-					return;
-				}
-			}
-			setMenu(<MenuComp data={cache} theme={theme} />);
-			return;
-		}
-
-		getMenus(getMenusDate()).then(data => {
-			const datas = [];
-			data.forEach(d => {
-				if (!d?.error) {
-					datas.push(d.data);
-				}
-			})
-			sessionStorage.setItem('menuCache', JSON.stringify(datas));
-			if (!datas.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
-					setMenu(
-						<div className="MenuWaiting">
-							<div className="WaitingError">
-								Bon week-end !
-							</div>
-						</div>
-					);
-					return;
-				} else {
-					setMenu(
-						<div className="MenuWaiting">
-							<div className="WaitingError">
-								Aucun menu à afficher
-							</div>
-						</div>
-					);
-					return;
-				}
-			}
-			setMenu(<MenuComp data={datas} theme={theme} />);
-		})
-	}, [theme])
-	return (
-		<div className={theme === 'dark' ? 'Main MainDark' : "Main"}>
-			{menu}
 		</div>
 	);
+
+
+	useEffect(() => {
+		function getMenu(date: Date) {
+			getMenus(getMenusDate(date)).then((data: any) => {
+				const datas: Array<any> = [];
+				data.forEach((d: any) => {
+					if (!d?.error) {
+						datas.push(d.data);
+					}
+				})
+				if (!datas.length) {
+					setMenu(
+						<div className="ExploreHeaderBox">
+							<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
+								Aucun menu à afficher
+							</div>
+							<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
+						</div>
+					);
+					return;
+				}
+
+				const Months = ['Décembre', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre'];
+				if (date.getDay() === 6) {
+					date.setDate(date.getDate() + 2);
+				}
+				if (date.getDay() === 0) {
+					date.setDate(date.getDate() + 1);
+				}
+
+				const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 4);
+				setMenu(
+					<div>
+						<div className='ExploreHeaderBox'>
+							<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
+								{date.getDate()} {Months[date.getMonth() + 1]} au {date2.getDate()} {Months[date2.getMonth() + 1]}
+							</div>
+							<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
+						</div>
+						<MenuComp data={datas} theme={theme} />
+					</div>
+
+				);
+			})
+			setMenu(
+				<div className="ExploreHeaderBox">
+					<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
+						Chargement du {date.toLocaleDateString()}...
+					</div>
+					<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
+				</div>
+			)
+		}
+		getMenu(new Date())
+	}, [theme]);
+
+	return menu;
 }
 
-export default Menu;
+
+
+
+export default Explore;

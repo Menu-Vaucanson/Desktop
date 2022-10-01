@@ -31,8 +31,8 @@ function Contact({ theme }) {
 			desc: "Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson."
 		},
 		{
-			title: "Github",
-			desc: "Le code est disponible ici, vous pouvez également apporter des suggestions et faire des rapports de bugs.",
+			title: "GitHub",
+			desc: "Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter de bugs.",
 			link: "https://github.com/Menu-Vaucanson"
 		}
 	];

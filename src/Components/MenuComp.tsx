@@ -1,8 +1,8 @@
 import Dish from './Dish';
 
-function getDate(date) {
+function getDate(date: string) {
 	let d = date.split('/');
-	const MenuDate = new Date(d[2], d[1] - 1, d[0]);
+	const MenuDate = new Date(parseInt(d[2]), parseInt(d[1]) - 1, parseInt(d[0]));
 
 	if (MenuDate.getDay() === 1) {
 		return 'Lundi';
@@ -37,12 +37,12 @@ function getDateEvening(date) {
 }
 
 function MenuComp({ data, theme }) {
-	const menus = [];
-	const menusEvening = [];
+	const menus: Array<any> = [];
+	const menusEvening: Array<any> = [];
 
-	const isEvening = JSON.parse(window.localStorage.getItem('evening'));
+	const isEvening = JSON.parse(window.localStorage.getItem('evening') as string);
 
-	data.forEach((menu, i) => {
+	data.forEach((menu: any, i: number) => {
 		let Class = 'Menu';
 		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
 		if (date.getTime() < new Date().getTime()) {
@@ -90,8 +90,8 @@ function MenuComp({ data, theme }) {
 					);
 				}
 			} else {
-				const dishsEven = [];
-				menu.evening?.forEach((dish, i) => {
+				const dishsEven: Array<any> = [];
+				menu.evening?.forEach((dish: any, i: number) => {
 					dishsEven.push(<Dish data={dish} key={i} theme={theme} />);
 				})
 				if (!dishsEven.length) return;
