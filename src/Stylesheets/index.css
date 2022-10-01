@@ -28,7 +28,8 @@ body {
 
 .Main {
 	width: 100vw;
-	height: calc(100vh - 3vmax - 1.5vmax);
+	margin-top: calc(3vmax + 1.5vmax);
+	min-height: calc(100vh - 3vmax - 1.5vmax);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -123,6 +124,10 @@ body {
 	align-items: center;
 	justify-content: center;
 	margin-right: 1vw;
+}
+
+.AllMenus {
+	margin-top: 3vh;
 }
 
 .Dish {
