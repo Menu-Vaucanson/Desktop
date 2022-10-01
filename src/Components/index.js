@@ -8,7 +8,7 @@ import E404 from './E404';
 import Settings from './Settings';
 import Informations from './Informations';
 import Contact from './Contact';
-import SelectDate from './SelectDate';
+import Explore from './Explore';
 
 function Index() {
 
@@ -26,7 +26,7 @@ function Index() {
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<Menu theme={theme} />} />
-					<Route path="/Explore" element={<SelectDate theme={theme} />} />
+					<Route path="/Explore" element={<Explore theme={theme} />} />
 					<Route path="/Informations" element={<Informations theme={theme} />} />
 					<Route path="/Contact" element={<Contact theme={theme} />} />
 					<Route path="/Settings" element={<Settings theme={theme} settheme={settheme} />} />
