@@ -369,6 +369,33 @@ a {
 	gap: 1vw;
 }
 
+.SecurityBox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 1vh;
+	background-color: #D9D9D9;
+	width: 25vw;
+	height: 12vh;
+	margin-top: 2vh;
+	border-radius: 0.5vmax;
+}
+
+.SecurityBoxs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 2vh;
+	width: 100vw;
+}
+
+.SecurityBox.green {
+	background-color: #246d24;
+}
+
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {
 		display: none;
