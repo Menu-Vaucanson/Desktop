@@ -373,8 +373,9 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
 	text-align: center;
+	flex-direction: column;
+	gap: 1vh;
 	padding: 1vh;
 	background-color: #D9D9D9;
 	width: 25vw;
@@ -383,18 +384,36 @@ a {
 	border-radius: 0.5vmax;
 }
 
+.SecurityBoxButons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 2vh;
+}
+
 .SecurityBoxs {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	flex-direction: column;
 	padding: 2vh;
 	width: 100vw;
 }
 
 .SecurityBox.green {
-	background-color: #246d24;
+	background-color: #2d882d;
 }
+
+.SecurityBox.brown {
+	background-color: #885a2e;
+}
+
+.SecurityBox.purple {
+	background-color: #511f5a;
+}
+
 
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {
