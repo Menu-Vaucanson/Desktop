@@ -43,7 +43,7 @@ function MenuComp({ data, theme }) {
 	const isEvening = JSON.parse(window.localStorage.getItem('evening') as string);
 
 	data.forEach((menu: any, i: number) => {
-		let Class = 'Menu';
+		let Class = 'MenuAnimated' + i + ' Menu';
 		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
 		if (date.getTime() < new Date().getTime()) {
 			Class += ' MenuPasted';
@@ -65,7 +65,7 @@ function MenuComp({ data, theme }) {
 				<div className={Class} key={i}>
 					{getDate(menu.date)}
 					<div className='MenuContent'>
-						{menu.menu?.map((dish, i) => {
+						{menu.menu?.map((dish: any, i: number) => {
 							return <Dish data={dish} key={i} theme={theme} />;
 						})}
 					</div>
@@ -73,7 +73,7 @@ function MenuComp({ data, theme }) {
 			);
 		}
 		if (isEvening) {
-			let Class = 'Menu';
+			let Class = 'MenuAnimated' + i + ' Menu';
 			const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
 			if (date.getTime() < new Date().getTime()) {
 				Class += ' MenuPasted';
