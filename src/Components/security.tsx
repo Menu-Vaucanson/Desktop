@@ -71,7 +71,7 @@ function Security() {
         colors: "purple",
             link: "https://observatory.mozilla.org/analyze/0380033e.index-education.net"
         },{
-            name: "Le lycée vaucanson",
+            name: "Le site du lycée",
             rate: "D+",
             colors: "purple",
             link: "https://lycee-vaucanson-grenoble.web.ac-grenoble.fr/"
@@ -85,7 +85,7 @@ function Security() {
                         {element.name}
                     </div>
                 <div className="SecuritySeparator"></div>
-                <div className={"Rate "+element.colors}>
+                <div className={"SecureRate "+element.colors}>
                     note: {element.rate}
                 </div>
             </a>
@@ -93,12 +93,17 @@ function Security() {
         }</div>
     }
     return (
-        <div className="SecurityBoxs">
-            Grace au superbe travaille fait par Wiwok nous nous somme fait certifier par plusieur organisme d'audit de securitée de site web. Ces test certifie que les probleme de securitée les plus frequant ne sont pas utilisable sur ce site.
-            Voici quelle que un des site qui nous on certifier :
-            {CreateComp(securityTest)}
-            en comparaison :
+        <div className="SecurityPage">
+            <div className="SecurityBoxs">
+                Grace au superbe travaille fait par Wiwok nous nous somme fait certifier par plusieur organisme d'audit de securitée de site web. Ces test certifie que les probleme de securitée les plus frequant ne sont pas utilisable sur ce site.
+                Voici quelle que un des site qui nous on certifier :
+            </div>
+            { CreateComp(securityTest) }
+            <div className="ComparateBoxs">
+                en comparaison :
+            </div>
             {CreateComp(otherTest)}
+            <br/>
         </div>
     )
 }

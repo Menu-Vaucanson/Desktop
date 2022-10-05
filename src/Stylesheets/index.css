@@ -411,12 +411,27 @@ a {
 	text-align: center;
 	flex-direction: column;
 	gap: 1vh;
-	padding: 1vh;
+	padding: 1.5vh;
 	background-color: #D9D9D9;
-	width: 25vw;
+	width: 15vw;
 	height: 12vh;
 	margin-top: 2vh;
 	border-radius: 0.5vmax;
+	transition-duration: 300ms;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.SecurityBox:hover {
+	box-shadow: 0 0 2vmax rgba(0, 0, 0, 0.25);
+}
+
+.SecurityPage {
+	margin-top: 12vh;
+	gap: 4vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .SecurityBoxButons {
@@ -424,34 +439,56 @@ a {
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 2vh;
+	width: 80vw;
+	column-gap: 3vw;
+	row-gap: 2vh;
+	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
 }
+
 
 .SecurityBoxs {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	flex-direction: column;
 	padding: 2vh;
-	width: 100vw;
+	width: 80vw;
+	background-color: #D9D9D9;
+	border-radius: 2vh;
+	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
 }
 
-.Rate {
-	padding: 1vh 5vw;
+
+.ComparateBoxs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 2vh;
+	background-color: #D9D9D9;
+	border-radius: 2vh;
+	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
+}
+
+.SecureRate {
+	height: 5vh;
+	padding: 0vh 1vw;
 	border-radius: 0.5vh;
+	text-align: center;
+	display: flex;
+	align-items: center;
 }
 
-.Rate.green {
-	background-color: #2d882d;
+.SecureRate.green {
+	background-color: #00823F;
 }
 
-.Rate.brown {
-	background-color: #885a2e;
+.SecureRate.brown {
+	background-color: #EE8200;
 }
 
-.Rate.purple {
-	background-color: #511f5a;
+.SecureRate.purple {
+	background-color: #E73C09;
 }
 
 
