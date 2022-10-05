@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 function Security() {
     const securityTest: Array<{ name: string, rate: string, colors: string, link: string }> = [
         {
-            name: "mozilla",
+            name: "Mozilla",
             rate: "A+",
             colors: "green",
             link: "https://observatory.mozilla.org/analyze/menuvox.fr"
         },{
-            name: "securityheaders",
+            name: "Securityheaders",
             rate: "A+",
             colors: "green",
             link: "https://securityheaders.com/?followRedirects=on&hide=on&q=menuvox.fr"
         },{
-            name: "tls.imirhil",
+            name: "Tls.imirhil",
             rate: "A+",
             colors: "green",
             link: "https://tls.imirhil.fr/https/menuvox.fr"
         },{
-            name: "ssllabs",
+            name: "Ssllabs",
             rate: "A+",
             colors: "green",
             link: "https://www.ssllabs.com/ssltest/analyze?d=menuvox.fr"
@@ -28,32 +28,32 @@ function Security() {
             colors: "green",
             link: "https://www.immuniweb.com/ssl/menuvox.fr/MnPOVJDs/"
         },{
-            name: "google",
+            name: "Google",
             rate: "all good",
             colors: "green",
             link: "https://csp-evaluator.withgoogle.com/?csp=https://menuvox.fr"
         },{
-            name: "google transparency",
+            name: "Google Transparency",
             rate: "no risk",
             colors: "green",
             link: "https://transparencyreport.google.com/safe-browsing/search?url=menuvox.fr"
         },{
-            name: "hstspreload",
+            name: "Hstspreload",
             rate: "validé",
             colors: "green",
             link: "https://hstspreload.org?domain=menuvox.fr"
         },{
-            name: "virusTotal",
+            name: "VirusTotal",
             rate: "clean",
             colors: "green",
             link: "https://www.virustotal.com/gui/url/181a40e35c8c6a87622a212da69faf4ca4f851b3e083ddfe10792147857c1fb7"
         },{
-            name: "sitecheck",
+            name: "Sitecheck",
             rate: "low risk",
             colors: "green",
             link: "https://sitecheck.sucuri.net/results/menuvox.fr"
         },{
-            name: "quttera",
+            name: "Quttera",
             rate: "no Malware",
             colors: "green",
             link: "https://quttera.com/detailed_report/menuvox.fr"
@@ -71,7 +71,7 @@ function Security() {
         colors: "purple",
             link: "https://observatory.mozilla.org/analyze/0380033e.index-education.net"
         },{
-            name: "le lycée vaucanson",
+            name: "Le lycée vaucanson",
             rate: "D+",
             colors: "purple",
             link: "https://lycee-vaucanson-grenoble.web.ac-grenoble.fr/"
@@ -80,11 +80,12 @@ function Security() {
     function CreateComp(dataset: Array<{ name: string, rate: string, colors: string, link: string }>) {
         return <div className="SecurityBoxButons">{
             dataset.map((element) => {
-                return <a  className={"SecurityBox "+element.colors} href={element.link} target="_blank" rel="noopener noreferrer">
+                return <a  className="SecurityBox" href={element.link} target="_blank" rel="noopener noreferrer">
                 <div className="SecurityName">
-                    {element.name}
-                </div>  
-                <div className="Rate">
+                        {element.name}
+                    </div>
+                <div className="SecuritySeparator"></div>
+                <div className={"Rate "+element.colors}>
                     note: {element.rate}
                 </div>
             </a>

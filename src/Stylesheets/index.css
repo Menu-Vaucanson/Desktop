@@ -402,15 +402,20 @@ a {
 	width: 100vw;
 }
 
-.SecurityBox.green {
+.Rate {
+	padding: 1vh 5vw;
+	border-radius: 0.5vh;
+}
+
+.Rate.green {
 	background-color: #2d882d;
 }
 
-.SecurityBox.brown {
+.Rate.brown {
 	background-color: #885a2e;
 }
 
-.SecurityBox.purple {
+.Rate.purple {
 	background-color: #511f5a;
 }
 
