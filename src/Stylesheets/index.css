@@ -404,29 +404,36 @@ a {
 	gap: 1vw;
 }
 
+
+.SecuritySeparator {
+	height: 1px;
+	width: 10vw;
+	background-color: black;
+}
+
 .SecurityBox {
+	gap: 1vh;
+	height: 12vh;
+	padding: 1.5vh;
+	margin-top: 12vh;
+	border-radius: 0.5vmax;
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	flex-direction: column;
-	gap: 1vh;
-	padding: 1.5vh;
-	background-color: #D9D9D9;
+	background-color: #B3B3B3;
 	width: 15vw;
-	height: 12vh;
 	margin-top: 2vh;
-	border-radius: 0.5vmax;
 	transition-duration: 300ms;
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .SecurityBox:hover {
-	box-shadow: 0 0 2vmax rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.5);
 }
 
 .SecurityPage {
-	margin-top: 12vh;
 	gap: 4vh;
 	display: flex;
 	align-items: center;
@@ -442,7 +449,6 @@ a {
 	width: 80vw;
 	column-gap: 3vw;
 	row-gap: 2vh;
-	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
 }
 
 
@@ -455,7 +461,7 @@ a {
 	width: 80vw;
 	background-color: #D9D9D9;
 	border-radius: 2vh;
-	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.25);
 }
 
 
@@ -467,7 +473,7 @@ a {
 	padding: 2vh;
 	background-color: #D9D9D9;
 	border-radius: 2vh;
-	filter: drop-shadow(0px 0.5vh 0.5vh rgba(0, 0, 0, 0.4));
+	box-shadow: 0 0 1vmax rgba(0, 0, 0, 0.25);
 }
 
 .SecureRate {
@@ -480,7 +486,7 @@ a {
 }
 
 .SecureRate.green {
-	background-color: #00823F;
+	background-color: #00a851;
 }
 
 .SecureRate.brown {

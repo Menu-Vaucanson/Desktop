@@ -84,7 +84,7 @@ function Security() {
                 <div className="SecurityName">
                         {element.name}
                     </div>
-                <div className="SecuritySeparator"></div>
+                {/* <div className="SecuritySeparator"></div> */}
                 <div className={"SecureRate "+element.colors}>
                     note: {element.rate}
                 </div>
