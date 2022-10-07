@@ -9,9 +9,9 @@ import Settings from './Settings';
 import Informations from './Informations';
 import Contact from './Contact';
 import Explore from './Explore';
+import Security from './Security';
 
 function Index() {
-
 	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
 
 	if (theme === 'dark') {
@@ -32,6 +32,7 @@ function Index() {
 					<Route path="/Informations" element={<Informations theme={theme} />} />
 					<Route path="/Contact" element={<Contact theme={theme} />} />
 					<Route path="/Settings" element={<Settings theme={theme} settheme={settheme} />} />
+					<Route path="/Security" element={<Security />} />
 					<Route path="/*" element={<E404 />} />
 				</Routes>
 			</div>
