@@ -9,7 +9,7 @@ import Settings from './Settings';
 import Informations from './Informations';
 import Contact from './Contact';
 import Explore from './Explore';
-import Security from './security';
+import Security from './Security';
 
 function Index() {
 
