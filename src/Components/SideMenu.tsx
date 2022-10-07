@@ -17,15 +17,17 @@ function SideMenu({ state, callback, theme }) {
 		})
 	}
 
+
 	return (
 		<div className={theme === 'dark' ? "SideMenu SideMenuDark" : "SideMenu"} style={css}>
 			<div className='SideMenuClickHanlder' onClick={click} style={css2}></div>
 			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/' onClick={click}>Accueil</Link>
 			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Explore' onClick={click}>Explorer</Link>
+			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Security' onClick={click}>Sécurité</Link>
 			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Informations' onClick={click}>Informations</Link>
 			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Settings' onClick={click}>Paramètres</Link>
 		</div>
-	)
+	);
 }
 
 export default SideMenu;

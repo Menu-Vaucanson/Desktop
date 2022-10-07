@@ -1,109 +1,128 @@
 function Security() {
-	const securityTest: Array<{ name: string, rate: string, colors: string, link: string }> = [
-		{
-			name: "Mozilla",
-			rate: "A+",
-			colors: "green",
-			link: "https://observatory.mozilla.org/analyze/menuvox.fr"
-		}, {
-			name: "Securityheaders",
-			rate: "A+",
-			colors: "green",
-			link: "https://securityheaders.com/?followRedirects=on&hide=on&q=menuvox.fr"
-		}, {
-			name: "Tls.imirhil",
-			rate: "A+",
-			colors: "green",
-			link: "https://tls.imirhil.fr/https/menuvox.fr"
-		}, {
-			name: "Ssllabs",
-			rate: "A+",
-			colors: "green",
-			link: "https://www.ssllabs.com/ssltest/analyze?d=menuvox.fr"
-		}, {
-			name: "ImmuniWeb",
-			rate: "A+",
-			colors: "green",
-			link: "https://www.immuniweb.com/ssl/menuvox.fr/MnPOVJDs/"
-		}, {
-			name: "Google",
-			rate: "all good",
-			colors: "green",
-			link: "https://csp-evaluator.withgoogle.com/?csp=https://menuvox.fr"
-		}, {
-			name: "Google Transparency",
-			rate: "no risk",
-			colors: "green",
-			link: "https://transparencyreport.google.com/safe-browsing/search?url=menuvox.fr"
-		}, {
-			name: "Hstspreload",
-			rate: "validé",
-			colors: "green",
-			link: "https://hstspreload.org?domain=menuvox.fr"
-		}, {
-			name: "VirusTotal",
-			rate: "clean",
-			colors: "green",
-			link: "https://www.virustotal.com/gui/url/181a40e35c8c6a87622a212da69faf4ca4f851b3e083ddfe10792147857c1fb7"
-		}, {
-			name: "Sitecheck",
-			rate: "low risk",
-			colors: "green",
-			link: "https://sitecheck.sucuri.net/results/menuvox.fr"
-		}, {
-			name: "Quttera",
-			rate: "no Malware",
-			colors: "green",
-			link: "https://quttera.com/detailed_report/menuvox.fr"
-		}
-	];
-	const otherTest: Array<{ name: string, rate: string, colors: string, link: string }> = [
-		{
-			name: "Index Education",
-			rate: "c",
-			colors: "brown",
-			link: "https://observatory.mozilla.org/analyze/www.index-education.com"
-		}, {
-			name: "Pronote",
-			rate: "D+",
-			colors: "purple",
-			link: "https://observatory.mozilla.org/analyze/0380033e.index-education.net"
-		}, {
-			name: "Le site du lycée",
-			rate: "D+",
-			colors: "purple",
-			link: "https://lycee-vaucanson-grenoble.web.ac-grenoble.fr/"
-		}
-	]
-	function CreateComp(dataset: Array<{ name: string, rate: string, colors: string, link: string }>) {
-		return <div className="SecurityBoxButons">{
-			dataset.map((element) => {
-				return <a className="SecurityBox" href={element.link} target="_blank" rel="noopener noreferrer">
-					<div className="SecurityName">
-						{element.name}
-					</div>
-					{/* <div className="SecuritySeparator"></div> */}
-					<div className={"SecureRate " + element.colors}>
-						note: {element.rate}
-					</div>
-				</a>
-			})
-		}</div>
+	function TheirSecurity() {
+		const TheirTests: Array<{ name: string, rate: string, color: string, link: string }> = [
+			{
+				name: "Index Education (Mozilla Observatory)",
+				rate: "C",
+				color: "yellow",
+				link: "https://observatory.mozilla.org/analyze/www.index-education.com"
+			}, {
+				name: "PRONOTE (Mozilla Observatory)",
+				rate: "D+",
+				color: "orange",
+				link: "https://observatory.mozilla.org/analyze/0380033e.index-education.net"
+			}, {
+				name: "Lycée Vaucanson (Mozilla Observatory)",
+				rate: "D+",
+				color: "orange",
+				link: "https://observatory.mozilla.org/analyze/lycee-vaucanson-grenoble.web.ac-grenoble.fr"
+			}
+		];
+
+		return (
+			<div className="SecurityBoxs">
+				{TheirTests.map((element, i) => {
+					return (
+						<a className="SecurityBox" href={element.link} target="_blank" rel="noreferrer" key={i}>
+							<div className="SecurityName">
+								{element.name}
+							</div>
+							<div className={"SecurityRate " + element.color}>
+								Note: {element.rate}
+							</div>
+						</a>
+					);
+				})}
+			</div>
+		);
 	}
+
+	function OurSecurity() {
+		const OurTests: Array<{ name: string, rate: string, color: string, link: string }> = [
+			{
+				name: "Mozilla Observatory",
+				rate: "A+",
+				color: "green",
+				link: "https://observatory.mozilla.org/analyze/menuvox.fr"
+			}, {
+				name: "Security Headers",
+				rate: "A+",
+				color: "green",
+				link: "https://securityheaders.com/?followRedirects=on&hide=on&q=menuvox.fr"
+			}, {
+				name: "CryptCheck",
+				rate: "A+",
+				color: "green",
+				link: "https://tls.imirhil.fr/https/menuvox.fr"
+			}, {
+				name: "SSL Labs",
+				rate: "A+",
+				color: "green",
+				link: "https://www.ssllabs.com/ssltest/analyze?d=menuvox.fr"
+			}, {
+				name: "ImmuniWeb",
+				rate: "A+",
+				color: "green",
+				link: "https://www.immuniweb.com/ssl/menuvox.fr/MnPOVJDs/"
+			}, {
+				name: "Google Transparency",
+				rate: "No risk",
+				color: "green",
+				link: "https://transparencyreport.google.com/safe-browsing/search?url=menuvox.fr"
+			}, {
+				name: "SiteCheck",
+				rate: "Low risk",
+				color: "green",
+				link: "https://sitecheck.sucuri.net/results/menuvox.fr"
+			}, {
+				name: "Virus Total",
+				rate: "Clean",
+				color: "green",
+				link: "https://www.virustotal.com/gui/url/e0b6251bbfeb152c2e4210c9ab60d03e2b7d29fceae7cf6d33989ea63d329285?nocache=1"
+			}, {
+				name: "Quttera",
+				rate: "No Malware",
+				color: "green",
+				link: "https://quttera.com/detailed_report/menuvox.fr"
+			}
+		];
+		return (
+			<div className="SecurityBoxs">
+				{OurTests.map((element, i) => {
+					let customClass = 'SecurityBox1';
+					if (i % 3 === 1) {
+						customClass = 'SecurityBox2'
+					} else if (i % 3 === 2) {
+						customClass = 'SecurityBox3'
+					}
+					return (
+						<a className={"SecurityBox " + customClass} href={element.link} target="_blank" rel="noreferrer" key={i}>
+							<div className="SecurityName">
+								{element.name}
+							</div>
+							<div className={"SecurityRate " + element.color}>
+								Note: {element.rate}
+							</div>
+						</a>
+					);
+				})}
+			</div>
+		);
+	}
+
 	return (
 		<div className="SecurityPage">
-			<div className="SecurityBoxs">
-				Grace au superbe travaille fait par Wiwok nous nous somme fait certifier par plusieur organisme d'audit de securitée de site web. Ces test certifie que les probleme de securitée les plus frequant ne sont pas utilisable sur ce site.
-				Voici quelle que un des site qui nous on certifier :
+			<div className="SecurityText">
+				Grace au superbe travail fait par Wiwok, nous nous sommes fait certifiés par plusieurs organismes d'audit de sécurité web. Ces tests certifient que les problèmes de sécurité les plus fréquents ne sont pas utilisable sur ce site.
+				Voici quelques-uns des sites qui nous ont certifié :
 			</div>
-			{CreateComp(securityTest)}
-			<div className="ComparateBoxs">
-				en comparaison :
+			<OurSecurity />
+			<div className="SecurityText">
+				Comparaisons
 			</div>
-			{CreateComp(otherTest)}
-			<br />
+			<TheirSecurity />
 		</div>
-	)
+	);
 }
 
 export default Security;

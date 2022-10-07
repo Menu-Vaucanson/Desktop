@@ -12,7 +12,6 @@ import Explore from './Explore';
 import Security from './Security';
 
 function Index() {
-
 	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
 
 	if (theme === 'dark') {
