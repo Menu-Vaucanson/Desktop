@@ -17,15 +17,33 @@ function SideMenu({ state, callback, theme }) {
 		})
 	}
 
+	const list: Array<{ title: string, link: string }> = [
+		{
+			title: 'Accueil',
+			link: '/'
+		}, {
+			title: 'Explorer',
+			link: '/Explore'
+		}, {
+			title: 'Sécurité',
+			link: '/Security'
+		}, {
+			title: 'Informations',
+			link: '/Informations'
+		}, {
+			title: 'Paramètres',
+			link: '/Settings'
+		}
+	];
 
 	return (
 		<div className={theme === 'dark' ? "SideMenu SideMenuDark" : "SideMenu"} style={css}>
 			<div className='SideMenuClickHanlder' onClick={click} style={css2}></div>
-			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/' onClick={click}>Accueil</Link>
-			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Explore' onClick={click}>Explorer</Link>
-			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Security' onClick={click}>Sécurité</Link>
-			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Informations' onClick={click}>Informations</Link>
-			<Link className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to='/Settings' onClick={click}>Paramètres</Link>
+			{list.map((element, i) => {
+				return (
+					<Link key={i} className={theme === 'dark' ? 'SideMenuElement SideMenuElementDark' : "SideMenuElement"} to={element.link} onClick={click}>{element.title}</Link>
+				);
+			})}
 		</div>
 	);
 }
