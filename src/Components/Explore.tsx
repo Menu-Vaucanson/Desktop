@@ -111,7 +111,7 @@ function getMenus(menus) {
 				resolve(null);
 			} else {
 				let data = response.data.data;
-				data = data.map(d => {
+				data = data.map((d: any) => {
 					const temp = d.data?.date?.split('/');
 					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
@@ -156,20 +156,29 @@ function Explore({ theme }) {
 					return;
 				}
 
-				const Months = ['Décembre', 'Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre'];
-				if (date.getDay() === 6) {
+				const Months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+				if (date.getDay() === 2) {
+					date.setDate(date.getDate() - 1);
+				} else if (date.getDay() === 3) {
+					date.setDate(date.getDate() - 2);
+				} else if (date.getDay() === 4) {
+					date.setDate(date.getDate() - 3);
+				} else if (date.getDay() === 5) {
+					date.setDate(date.getDate() - 4);
+				} else if (date.getDay() === 6) {
 					date.setDate(date.getDate() + 2);
-				}
-				if (date.getDay() === 0) {
+				} else if (date.getDay() === 0) {
 					date.setDate(date.getDate() + 1);
 				}
 
 				const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 4);
+
 				setMenu(
 					<div>
 						<div className='ExploreHeaderBox'>
 							<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
-								{date.getDate()} {Months[date.getMonth() + 1]} au {date2.getDate()} {Months[date2.getMonth() + 1]}
+								{date.getDate()} {Months[date.getMonth()]} au {date2.getDate()} {Months[date2.getMonth()]}
 							</div>
 							<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
 						</div>
@@ -181,13 +190,13 @@ function Explore({ theme }) {
 			setMenu(
 				<div className="ExploreHeaderBox">
 					<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
-						Chargement du {date.toLocaleDateString()}...
+						Récupération des menus en cours...
 					</div>
 					<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
 				</div>
 			)
 		}
-		getMenu(new Date())
+		getMenu(new Date());
 	}, [theme]);
 
 	return menu;
