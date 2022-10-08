@@ -113,7 +113,7 @@ function Security() {
 	return (
 		<div className="SecurityPage">
 			<div className="SecurityText">
-				Grace au superbe travail fait par Wiwok, nous nous sommes fait certifiés par plusieurs organismes d'audit de sécurité web. Ces tests certifient que les problèmes de sécurité les plus fréquents ne sont pas utilisable sur ce site.
+				Grace au superbe travail fait par Wiwok, nous nous sommes fait certifiés par plusieurs organismes d'audit de sécurité web. Ces tests certifient que les problèmes de sécurité les plus fréquents ne sont pas présents sur ce site.
 				Voici quelques-uns des sites qui nous ont certifié :
 			</div>
 			<OurSecurity />
