@@ -14,7 +14,7 @@ function SideMenu({ state, callback, theme }) {
 	function click() {
 		callback((old: any) => {
 			return !old;
-		})
+		});
 	}
 
 	const list: Array<{ title: string, link: string }> = [

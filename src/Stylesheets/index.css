@@ -37,6 +37,66 @@
 	}
 }
 
+@keyframes infoBox0 {
+	from {
+		transform: translateX(-10vw) translateY(-10vh);
+	}
+
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes infoBox1 {
+	from {
+		transform: translateY(-10vh);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes infoBox2 {
+	from {
+		transform: translateX(10vw) translateY(-10vh);
+	}
+
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes infoBox3 {
+	from {
+		transform: translateX(-10vw) translateY(10vh);
+	}
+
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
+@keyframes infoBox4 {
+	from {
+		transform: translateY(10vh);
+	}
+
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes infoBox5 {
+	from {
+		transform: translateX(10vw) translateY(10vh);
+	}
+
+	to {
+		transform: translateX(0) translateY(0);
+	}
+}
+
 :root {
 	color-scheme: only light;
 }
@@ -365,12 +425,37 @@ a {
 	width: 22vw;
 	font-size: 1vw;
 	height: 20vh;
+	animation-duration: 250ms;
 }
 
 .InfoBoxTitle {
 	font-size: 1.5vw;
 	font-weight: bold;
 	margin-bottom: 3vh;
+}
+
+.InfoBoxAnimate0 {
+	animation-name: infoBox0;
+}
+
+.InfoBoxAnimate1 {
+	animation-name: infoBox1;
+}
+
+.InfoBoxAnimate2 {
+	animation-name: infoBox2;
+}
+
+.InfoBoxAnimate3 {
+	animation-name: infoBox3;
+}
+
+.InfoBoxAnimate4 {
+	animation-name: infoBox4;
+}
+
+.InfoBoxAnimate5 {
+	animation-name: infoBox5;
 }
 
 .Contact {

@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-function InfoBox({ title, desc, contact }) {
-	if (contact === true) {
+function InfoBox({ info, className }) {
+	if (info.contact) {
 		return (
-			<Link to={'/Contact'} className="InfoBox">
-				<div className="InfoBoxTitle">{title}</div>
-				{desc}
+			<Link to={'/Contact'} className={"InfoBox " + className}>
+				<div className="InfoBoxTitle">{info.title}</div>
+				{info.desc}
 			</Link>
-		)
+		);
 	}
 
 	return (
-		<div className="InfoBox">
-			<div className="InfoBoxTitle">{title}</div>
-			{desc}
+		<div className={"InfoBox " + className}>
+			<div className="InfoBoxTitle">{info.title}</div>
+			{info.desc}
 		</div>
-	)
+	);
 }
 
 function Informations({ theme }) {
@@ -45,18 +45,19 @@ function Informations({ theme }) {
 			title: "Publication",
 			desc: "Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi."
 		}
-	]
+	];
 
 	return (
 		<div className={theme === 'dark' ? "Informations InformationsDark" : 'Informations'}>
 			{infos.map((info, i) => {
+				let customClass = 'InfoBoxAnimate' + i;
 				if (info.contact) {
-					return <InfoBox key={i} title={info.title} desc={info.desc} contact={true} />
+					return <InfoBox key={i} info={info} className={customClass} />
 				}
-				return <InfoBox key={i} title={info.title} desc={info.desc} contact={false} />
+				return <InfoBox key={i} info={info} className={customClass} />
 			})}
 		</div>
-	)
+	);
 }
 
 export default Informations;
