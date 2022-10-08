@@ -22,18 +22,39 @@ function Index() {
 		document.body.style = 'background-color: #F5FEF5';
 	}
 
+	const elements = [
+		{
+			path: '/',
+			element: <Menu theme={theme} />
+		}, {
+			path: '/Explore',
+			element: <Explore theme={theme} />
+		}, {
+			path: '/Informations',
+			element: <Informations theme={theme} />
+		}, {
+			path: '/Contact',
+			element: <Contact theme={theme} />
+		}, {
+			path: '/Security',
+			element: <Security />
+		}, {
+			path: '/Settings',
+			element: <Settings theme={theme} settheme={settheme} />
+		}, {
+			path: '/*',
+			element: <E404 theme={theme} />
+		}
+	];
+
 	return (
 		<BrowserRouter>
 			<MenuBar theme={theme} />
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<Menu theme={theme} />} />
-					<Route path="/Explore" element={<Explore theme={theme} />} />
-					<Route path="/Informations" element={<Informations theme={theme} />} />
-					<Route path="/Contact" element={<Contact theme={theme} />} />
-					<Route path="/Settings" element={<Settings theme={theme} settheme={settheme} />} />
-					<Route path="/Security" element={<Security />} />
-					<Route path="/*" element={<E404 theme={theme} />} />
+					{elements.map((element, i) => {
+						return <Route path={element.path} element={element.element} key={i} />
+					})}
 				</Routes>
 			</div>
 		</BrowserRouter >
