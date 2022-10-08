@@ -343,15 +343,6 @@ body {
 	height: calc(100vh - 3vmax - 1.5vmax);
 }
 
-.InfoBox {
-	background-color: #D9D9D9;
-	padding: 4vh 4vw;
-	border-radius: 0.5vmax;
-	width: 22vw;
-	font-size: 2vh;
-	height: 20vh;
-}
-
 .ContactBox {
 	background-color: #D9D9D9;
 	padding: 4vh 4vw;
@@ -367,8 +358,17 @@ a {
 	text-decoration: none;
 }
 
+.InfoBox {
+	background-color: #D9D9D9;
+	padding: 4vh 4vw;
+	border-radius: 0.5vmax;
+	width: 22vw;
+	font-size: 1vw;
+	height: 20vh;
+}
+
 .InfoBoxTitle {
-	font-size: 2.5vh;
+	font-size: 1.5vw;
 	font-weight: bold;
 	margin-bottom: 3vh;
 }
@@ -525,16 +525,6 @@ a {
 	}
 }
 
-@media (max-width: 800px) {
-	.InfoBoxTitle {
-		font-size: 2vh;
-	}
-
-	.InfoBox {
-		font-size: 1.5vh;
-	}
-}
-
 @media (max-width: 650px) {
 
 	.Menu:nth-child(3),
@@ -545,11 +535,5 @@ a {
 
 	.Dish {
 		width: 35vw;
-	}
-}
-
-@media (max-width: 600px) {
-	.ContactBox {
-		font-size: 1.7vh;
 	}
 }
