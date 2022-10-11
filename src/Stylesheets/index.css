@@ -587,6 +587,32 @@ a {
 	background-color: #E73C09;
 }
 
+.legalBox {
+	padding: 2vh;
+	display: flex;
+	flex-direction: column;
+	background-color: #B3B3B3;
+	color: black;
+}
+
+.legalBoxs {
+	width: 80vw;
+	gap: 2vh;
+	margin-top: 2vh;
+	display: flex;
+	flex-direction: column;
+	background-color: #B3B3B3;
+}
+
+.legalTitle {
+	font-size: 5vh;
+}
+
+.legalPage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {

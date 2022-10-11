@@ -10,6 +10,7 @@ import Informations from './Informations';
 import Contact from './Contact';
 import Explore from './Explore';
 import Security from './Security';
+import Legal from './Legal';
 
 function Index() {
 	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
@@ -35,6 +36,9 @@ function Index() {
 		}, {
 			path: '/Contact',
 			element: <Contact theme={theme} />
+		}, {
+			path: '/Legal',
+			element:<Legal />
 		}, {
 			path: '/Security',
 			element: <Security />
