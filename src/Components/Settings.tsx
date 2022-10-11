@@ -49,21 +49,21 @@ function Settings({ theme, settheme }) {
 
 	return (
 		<div className={theme === 'dark' ? "Settings SettingsDark" : "Settings"}>
-			<div className="Setting" onClick={DarkClick}>
+			<div className="Setting SettingAnimated0" onClick={DarkClick}>
 				<div className="SettingTitle">Mode sombre</div>
 				<div className="SettingDesc">Un mode <i>dark</i>, pour ceux qui préfèrent le noir...</div>
 				<CustomCheck type={Setting1} />
 			</div>
-			<div className="Setting" onClick={InterneClick}>
+			<div className="Setting SettingAnimated1" onClick={InterneClick}>
 				<div className="SettingTitle">Mode interne</div>
 				<div className="SettingDesc">Mode interne, pour voir les menus du soir.</div>
 				<CustomCheck type={Setting2} />
 			</div>
-			<div className="Setting" onClick={CleanClick}>
+			<div className="Setting SettingAnimated2" onClick={CleanClick}>
 				<div className="SettingTitle">Effacer le cache</div>
 				<div className="SettingDesc">Libère le stockage instantané de toute les données mises par le site.</div>
 			</div>
-			<div className="Setting red" onClick={DeleteClick}>
+			<div className="Setting SettingAnimated3 red" onClick={DeleteClick}>
 				<div className="SettingTitle">Effacer toutes les données</div>
 				<div className="SettingDesc">Efface 100% des données stockées sur votre appareil par le site. Attention, cela réinitialise les paramètres ci-dessus.</div>
 			</div>

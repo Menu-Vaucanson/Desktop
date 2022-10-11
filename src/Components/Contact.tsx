@@ -1,7 +1,7 @@
-function InfoBox({ title, desc, link }) {
+function InfoBox({ title, desc, link, className }) {
 	if (link) {
 		return (
-			<a href={link} className="ContactBox">
+			<a href={link} className={"ContactBox ContactBoxHovered " + className}>
 				<div className="InfoBoxTitle">{title}</div>
 				{desc}
 			</a>
@@ -9,7 +9,7 @@ function InfoBox({ title, desc, link }) {
 	}
 
 	return (
-		<div className="ContactBox">
+		<div className={"ContactBox " + className}>
 			<div className="InfoBoxTitle">{title}</div>
 			{desc}
 		</div>
@@ -40,7 +40,7 @@ function Contact({ theme }) {
 	return (
 		<div className={theme === 'dark' ? "Contact ContactDark" : "Contact"}>
 			{infos.map((info, i) => {
-				return <InfoBox key={i} title={info.title} desc={info.desc} link={info.link} />
+				return <InfoBox className={"ContactBoxAnimated" + i} key={i} title={info.title} desc={info.desc} link={info.link} />
 			})}
 		</div>
 	)
