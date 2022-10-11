@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function InfoBox({ info, className }) {
 	if (info.contact) {
 		return (
-			<Link to={'/Contact'} className={"InfoBox " + className}>
+			<Link to={'/Contact'} className={"InfoBox InfoBoxContact " + className}>
 				<div className="InfoBoxTitle">{info.title}</div>
 				{info.desc}
 			</Link>
