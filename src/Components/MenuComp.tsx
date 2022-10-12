@@ -45,7 +45,7 @@ function MenuComp({ data, theme }) {
 	data.forEach((menu: any, i: number) => {
 		let Class = 'MenuAnimated' + i + ' Menu';
 		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
-		const now = new Date();	
+		const now = new Date();
 		if (new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() > date.getTime()) {
 			Class += ' MenuPasted';
 		}

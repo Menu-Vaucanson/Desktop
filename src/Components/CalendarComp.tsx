@@ -18,8 +18,8 @@ function MonthComp({ callback, theme, oldDate }) {
 	}
 
 	function change() {
-		const week = (document.getElementById("week") as any).value.split('-');
-		const Week = getDateOfWeek((parseInt(week[1][1]) * 10) + parseInt(week[1][2]), week[0]);
+		const week = (document.getElementById("week") as HTMLInputElement).value.split('-');
+		const Week = getDateOfWeek((parseInt(week[1][1]) * 10) + parseInt(week[1][2]), parseInt(week[0]));
 		callback(new Date(Week));
 	}
 

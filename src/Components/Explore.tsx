@@ -101,25 +101,47 @@ function getMenusDate(date: Date) {
 	return menus;
 }
 
-function getMenus(menus) {
+function getMenus(menus: Array<any>) {
+	const datas: Array<any> = [];
+	let cache: Array<any> = JSON.parse(window.sessionStorage.getItem('cache') as string);
+	if (cache === null) cache = [];
+	const Menus: Array<any> = [];
+	menus.forEach((data: any) => {
+		const result = cache.find(v => {
+			v.data.month++;
+			if (v.data.month === data.month && v.data.day === data.day) {
+				return true;
+			}
+			return false;
+		});
+		if (typeof result == 'undefined') {
+			Menus.push(data);
+		} else {
+			datas.push(result);
+		}
+	});
+
+	if (!Menus.length) return new Promise(r => r(datas));
+
 	return new Promise(resolve => {
-		axios.post(`${url}/menus`, { 'pc': true, 'days': menus }).catch(err => {
+		axios.post(`${url}/menus`, { 'pc': true, 'days': Menus }).catch(err => {
 			console.log(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {
 				resolve(null);
 			} else {
-				let data = response.data.data;
-				data = data.map((d: any) => {
+				const data: Array<any> = response.data.data;
+				data.forEach((d: any) => {
 					const temp = d.data?.date?.split('/');
-					if (typeof temp == 'undefined') return d;
-					d.data.day = parseInt(temp[0]);
-					d.data.month = temp[1] - 1;
-					d.data.year = parseInt(temp[2]);
-					return d;
+					if (typeof temp != 'undefined') {
+						d.data.day = parseInt(temp[0]);
+						d.data.month = temp[1] - 1;
+						d.data.year = parseInt(temp[2]);
+					}
+					datas.push(d);
 				});
-				resolve(data);
+				resolve(datas);
 			}
 		});
 	});
@@ -173,7 +195,6 @@ function Explore({ theme }) {
 				}
 
 				const date2 = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 4);
-
 				setMenu(
 					<div>
 						<div className='ExploreHeaderBox'>
@@ -184,9 +205,18 @@ function Explore({ theme }) {
 						</div>
 						<MenuComp data={datas} theme={theme} />
 					</div>
-
 				);
-			})
+
+				let cache: Array<any> = JSON.parse(window.sessionStorage.getItem('cache') as string);
+				if (cache === null) cache = [];
+				datas.forEach((data: any) => {
+					const result = cache.find(v => v.data.date === data.date);
+					if (typeof result == 'undefined') {
+						cache.push({ error: 0, data: data });
+					}
+				});
+				window.sessionStorage.setItem('cache', JSON.stringify(cache));
+			});
 			setMenu(
 				<div className="ExploreHeaderBox">
 					<div className={theme === 'dark' ? 'ExploreTitle ExploreTitleDark' : "ExploreTitle"}>
@@ -194,7 +224,7 @@ function Explore({ theme }) {
 					</div>
 					<CalendarComp oldDate={date} callback={getMenu} theme={theme} />
 				</div>
-			)
+			);
 		}
 		getMenu(new Date());
 	}, [theme]);
