@@ -38,7 +38,7 @@ function Index() {
 			element: <Contact theme={theme} />
 		}, {
 			path: '/Legal',
-			element:<Legal />
+			element:<Legal theme={theme}/>
 		}, {
 			path: '/Security',
 			element: <Security />

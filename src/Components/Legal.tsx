@@ -1,4 +1,4 @@
-function Legal() {
+function Legal({theme}) {
     const legalList = [
         {
             name: 'Utilisation',
@@ -17,9 +17,10 @@ function Legal() {
             content: <div>Si l’enregistrement de l’une de ces données vous pose un problème, vous pouvez nous contacter ici : contact@menuvox.fr</div>
         }
     ]
-    function UseList() {
+    function UseList({ theme }) {
+        console.log(theme);
         return (
-            <div className="legalBoxs">
+            <div className={theme === 'dark' ? "legalBoxs legalBoxsDark" : 'legalBoxs'}>
                 {legalList.map((Element: { name: string, content: JSX.Element },i) => {
                     return (
                         <div className="legalBox" key={i}>
@@ -36,7 +37,7 @@ function Legal() {
         );
     }
 
-    return (<div className="legalPage"><UseList /></div>);
+    return (<div className="legalPage"><UseList theme={theme} /></div>);
 }
 
 export default Legal;
