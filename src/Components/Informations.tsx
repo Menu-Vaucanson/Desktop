@@ -12,7 +12,7 @@ function InfoBox({ info, className }) {
 
 	if (info.legal) {
 		return (
-			<Link to={'/Legal'} className={"InfoBox " + className}>
+			<Link to={'/Legal'} className={"InfoBox InfoBoxContact " + className}>
 				<div className="InfoBoxTitle">{info.title}</div>
 				{info.desc}
 			</Link>
