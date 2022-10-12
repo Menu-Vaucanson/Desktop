@@ -1,19 +1,19 @@
 function Legal() {
     const legalList = [
         {
-            name: 'Utilité',
-            content: <div>Le serveur, pour son bon fonctionnement, enregistre des données telles que votre adresse IP et les notes que vous attribuez aux menus. La récupération de cette adresse ne sert qu’à deux choses : Faire des statistiques de fréquentation, et permettre de ne pas avoir de duplication de note, et c’est tout .</div>
+            name: 'Utilisation',
+            content: <div>Le serveur, pour son bon fonctionnement, enregistre des données telles que votre adresse IP et les notes que vous attribuez aux menus. La récupération de cette adresse ne sert qu’à deux choses : Faire des statistiques de fréquentation, et permettre de ne pas avoir de duplication de note, et c’est tout.</div>
         },{
-            name: 'Quand',
+            name: 'La récuperation',
             content: <div>L’adresse IP est récupérée lorsque votre ordinateur demande à nos serveurs les menus. Elle est aussi récupérée lorsque que vous notez un menu.</div>
         },{
-            name: 'Comment',
+            name: 'Le stockage',
             content: <div>Ces données sont stockées chez nous, sur nos serveurs, elles y sont en sécurité : Le serveur passe toutes les exigences de sécurité.</div>
         },{
-            name: 'Confiance',
+            name: 'Notre engagement',
             content: <div>Nous nous engageons à ne jamais revendre ou partager ces données en dehors de l’équipe du site.</div>
         },{
-            name: 'Légal',
+            name: 'Des question',
             content: <div>Si l’enregistrement de l’une de ces données vous pose un problème, vous pouvez nous contacter ici : contact@menuvox.fr</div>
         }
     ]
