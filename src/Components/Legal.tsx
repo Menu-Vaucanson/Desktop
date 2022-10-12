@@ -1,4 +1,5 @@
-function Legal({theme}) {
+import { Link } from 'react-router-dom';
+function Legal({ theme }) {
     const legalList = [
         {
             name: 'Utilisation',
@@ -8,13 +9,13 @@ function Legal({theme}) {
             content: <div>L’adresse IP est récupérée lorsque votre ordinateur demande à nos serveurs les menus. Elle est aussi récupérée lorsque que vous notez un menu.</div>
         },{
             name: 'Le stockage',
-            content: <div>Ces données sont stockées chez nous, sur nos serveurs, elles y sont en sécurité : Le serveur passe toutes les exigences de sécurité.</div>
+            content: <div>Ces données sont stockées chez nous, sur nos serveurs, elles y sont en sécurité : Le serveur passe toutes les <Link to='/Security'><u>exigences de sécurité</u>.</Link></div>
         },{
             name: 'Notre engagement',
             content: <div>Nous nous engageons à ne jamais revendre ou partager ces données en dehors de l’équipe du site.</div>
         },{
-            name: 'Des question',
-            content: <div>Si l’enregistrement de l’une de ces données vous pose un problème, vous pouvez nous contacter ici : contact@menuvox.fr</div>
+            name: 'Des questions',
+            content: <div>Si l’enregistrement de l’une de ces données vous pose un problème, vous pouvez nous contacter ici : <a href="mailto:contact@menuvox.fr"><u>contact@menuvox.fr</u></a></div>
         }
     ]
     function UseList({ theme }) {
