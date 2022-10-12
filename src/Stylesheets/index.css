@@ -595,11 +595,10 @@ a {
 }
 
 .legalBoxs {
-	gap: 5.2vh;
-	width: 80vw;
+	gap: 4.5vh;
+	width: 70vw;
 	padding: 4vh;
-	margin-top: 3vh;
-	margin-bottom: 2vh;
+	margin-top: 2vh;
 	border-radius: 0.5vmax;
 	display: flex;
 	flex-direction: column;
@@ -607,11 +606,12 @@ a {
 }
 
 .legalTitle {
-	font-size: 3.5vh;
+	font-size: 3vh;
 }
 
 .legalContent {
 	font-size: 2.25vh;
+	line-height: 2.9vh;
 }
 
 .legalPage {

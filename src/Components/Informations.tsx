@@ -10,6 +10,15 @@ function InfoBox({ info, className }) {
 		);
 	}
 
+	if (info.legal) {
+		return (
+			<Link to={'/Legal'} className={"InfoBox " + className}>
+				<div className="InfoBoxTitle">{info.title}</div>
+				{info.desc}
+			</Link>
+		);
+	}
+
 	return (
 		<div className={"InfoBox " + className}>
 			<div className="InfoBoxTitle">{info.title}</div>
@@ -26,8 +35,9 @@ function Informations({ theme }) {
 			contact: true
 		},
 		{
-			title: "Qui sommes-nous ?",
-			desc: "Nous sommes trois élèves en terminale STI2D."
+			title: "Légal",
+			desc: "Cliquez ici pour accéder aux mentions légales.",
+			legal: true
 		},
 		{
 			title: "Le code",
