@@ -8,9 +8,12 @@ import redDark from '../Themes/Dark/redDark';
 import greenDark from '../Themes/Dark/greenDark';
 import yellowDark from '../Themes/Dark/yellowDark';
 
-function Dish({ data, theme }) {
+import halloween from '../Themes/Dark/halloweenDark';
+import halloweenDark from '../Themes/Light/halloween';
 
+function Dish({ data, theme }) {
 	let css = {};
+
 	if (theme === 'dark') {
 		if (data.styleDark === 'blueDark') {
 			css = blueDark;
@@ -20,6 +23,8 @@ function Dish({ data, theme }) {
 			css = greenDark;
 		} else if (data.styleDark === 'yellowDark') {
 			css = yellowDark;
+		} else if (data.styleDark === 'halloweenDark') {
+			css = halloweenDark;
 		}
 	} else {
 		if (data.style === 'blue') {
@@ -30,15 +35,19 @@ function Dish({ data, theme }) {
 			css = green;
 		} else if (data.style === 'yellow') {
 			css = yellow;
+		} else if (data.style === 'halloween') {
+			css = halloween;
 		}
 	}
 
-	return (<div className="Dish" style={css}>
-		<div className="DishTitle">{data.name}</div>
-		<div className='DishContent'>
-			{data.content}
+	return (
+		<div className="Dish" style={css}>
+			<div className="DishTitle">{data.name}</div>
+			<div className='DishContent'>
+				{data.content}
+			</div>
 		</div>
-	</div>)
+	);
 }
 
 export default Dish;
