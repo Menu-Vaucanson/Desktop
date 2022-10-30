@@ -37,16 +37,13 @@ function SideMenu({ state, callback, theme }) {
 		}
 	];
 
-	function useKeypress(key: string, action: Function) {
-		useEffect(() => {
-		  function onKeyup(e) {
-			if (e.key === key) action();
-		  }
-		  window.addEventListener("keyup", onKeyup);
-		  return () => window.removeEventListener("keyup", onKeyup);
-		});
-	}
-	useKeypress("Escape", ()=>callback(false));
+	useEffect(() => {
+		function onKeyup(e: any) {
+			if (e.key === "Escape") callback(false);
+		}
+		window.addEventListener("keyup", onKeyup);
+		return () => window.removeEventListener("keyup", onKeyup);
+	});
 	return (
 		<div className={theme === 'dark' ? "SideMenu SideMenuDark" : "SideMenu"} style={css}>
 			<div className='SideMenuClickHanlder' onClick={click} style={css2}></div>
