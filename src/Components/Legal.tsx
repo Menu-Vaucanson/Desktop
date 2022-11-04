@@ -4,7 +4,7 @@ function Legal() {
 	const legalList = [
 		{
 			name: 'Utilisation',
-			content: <>Les serveurs, pour leurs bons fonctionnements, enregistrent des données telles que votre adresse IP et les notes que vous attribuez aux menus. La récupération de cette adresse ne sert qu’à deux choses : Faire des statistiques de fréquentation ainsi qu'éviter la duplication de note.</>
+			content: <>Les serveurs, pour leurs bons fonctionnements, enregistrent des données telles que votre adresse IP et les notes que vous attribuez aux menus. La récupération de cette adresse ne sert qu’à deux choses : Faire des statistiques de fréquentation ainsi qu'éviter les notes dupliqués.</>
 		}, {
 			name: 'La récuperation',
 			content: <>Votre adresse IP est récupérée lorsque vous accédez aux menus. Elle est aussi récupérée lorsque vous notez un menu.</>
