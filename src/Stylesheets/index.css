@@ -177,7 +177,6 @@
 	}
 }
 
-
 :root {
 	color-scheme: only light;
 }
@@ -301,6 +300,9 @@ body {
 }
 
 .Dish {
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center !important;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -756,7 +758,6 @@ a {
 	align-items: center;
 	justify-content: center;
 }
-
 
 @media (max-width: 1100px) {
 	.Menu:nth-child(5) {

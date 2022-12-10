@@ -11,6 +11,12 @@ import yellowDark from '../Themes/Dark/yellowDark';
 import halloween from '../Themes/Dark/halloweenDark';
 import halloweenDark from '../Themes/Light/halloween';
 
+import ChristmasBlue from '../Themes/Light/ChristmasBlue';
+import ChristmasRed from '../Themes/Light/ChristmasRed';
+import ChristmasGreen from '../Themes/Light/ChristmasGreen';
+import ChristmasYellow from '../Themes/Light/ChristmasYellow';
+
+
 function Dish({ data, theme }) {
 	let css = {};
 
@@ -25,6 +31,14 @@ function Dish({ data, theme }) {
 			css = yellowDark;
 		} else if (data.styleDark === 'halloweenDark') {
 			css = halloweenDark;
+		} else if (data.styleDark === 'ChristmasBlue') {
+			css = ChristmasBlue;
+		} else if (data.styleDark === 'ChristmasRed') {
+			css = ChristmasRed;
+		} else if (data.styleDark === 'ChristmasGreen') {
+			css = ChristmasGreen;
+		} else if (data.styleDark === 'ChristmasYellow') {
+			css = ChristmasYellow;
 		}
 	} else {
 		if (data.style === 'blue') {
@@ -37,6 +51,14 @@ function Dish({ data, theme }) {
 			css = yellow;
 		} else if (data.style === 'halloween') {
 			css = halloween;
+		} else if (data.style === 'ChristmasBlue') {
+			css = ChristmasBlue;
+		} else if (data.style === 'ChristmasRed') {
+			css = ChristmasRed;
+		} else if (data.style === 'ChristmasGreen') {
+			css = ChristmasGreen;
+		} else if (data.style === 'ChristmasYellow') {
+			css = ChristmasYellow;
 		}
 	}
 
