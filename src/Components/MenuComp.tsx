@@ -86,7 +86,7 @@ function MenuComp({ data, theme }) {
 						<div className={Class} key={i}>
 							{getDate(menu.date)}
 							<div className='MenuContent'>
-								{menu.errorMessage}
+								{menu.errorEveningMessage}
 							</div>
 						</div>
 					);
