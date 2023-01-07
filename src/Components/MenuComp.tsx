@@ -19,9 +19,9 @@ function getDate(date: string) {
 	}
 }
 
-function getDateEvening(date) {
+function getDateEvening(date: string) {
 	let d = date.split('/');
-	const MenuDate = new Date(d[2], d[1] - 1, d[0]);
+	const MenuDate = new Date(parseInt(d[2]), parseInt(d[1]) - 1, parseInt(d[0]));
 
 	if (MenuDate.getDay() === 1) {
 		return 'Lundi soir';
