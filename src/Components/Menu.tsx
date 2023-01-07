@@ -113,7 +113,7 @@ function getMenus(menus) {
 				resolve(null);
 			} else {
 				let data = response.data.data;
-				data = data.map(d => {
+				data = data.map((d: any) => {
 					const temp = d.data?.date?.split('/');
 					if (typeof temp == 'undefined') return d;
 					d.data.day = parseInt(temp[0]);
