@@ -49,11 +49,11 @@ function Informations({ theme }) {
 		},
 		{
 			title: "Fiabilité",
-			desc: "Le menu affiché n’est qu’une copie de ceux publiés par l'établissement, aucune information n’est donc garantie."
+			desc: "Les menus affichés ne sont que des copies de ceux fournis par l'établissement. Ils sont également sous réserve de modification."
 		},
 		{
 			title: "Publication",
-			desc: "Nous récupérons les menus manuellement. Ils seront donc disponibles entre le vendredi soir et le mardi."
+			desc: "Les menus nous sont transmis par l'établissement. Ils seront disponibles en fin de semaine."
 		}
 	];
 
