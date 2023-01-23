@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import SideMenu from "./SideMenu";
 import Logo from '../Assets/Logo.svg';
+import SideMenu from "./SideMenu";
 
 function MenuBar({ theme }) {
 	const [Active, setActive] = useState(false);
@@ -17,7 +17,7 @@ function MenuBar({ theme }) {
 	return (
 		<div className={theme === 'dark' ? "MenuBar MenuBarDark" : "MenuBar"}>
 			<SideMenu theme={theme} state={Active} callback={setActive} />
-			<div className="MenuButton" onClick={() => {
+			<div className={theme === 'dark' ? "MenuButton MenuButtonDark" : "MenuButton"} onClick={() => {
 				setActive(old => { return !old });
 			}}>
 				<div></div>

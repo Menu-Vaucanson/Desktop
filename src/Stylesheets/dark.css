@@ -52,3 +52,8 @@
 .E404Dark {
 	color: #F5FEF5;
 }
+
+.MenuButtonDark div {
+	background-color: rgba(0, 0, 0, 0.8);
+	box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.25);
+}
