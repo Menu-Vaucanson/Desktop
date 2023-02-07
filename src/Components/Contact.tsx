@@ -20,19 +20,19 @@ function Contact({ theme }) {
 	const infos = [
 		{
 			title: "E-mail",
-			desc: "contact@menuvox.fr"
+			desc: <>contact@menuvox.fr</>
 		},
 		{
 			title: "Discord",
-			desc: "Wiwok: Wiwok#2553 Unel: Unel#1527"
+			desc: <>Wiwok: Wiwok#2553<br />Unel: Unel#1527</>
 		},
 		{
 			title: "Rencontre",
-			desc: "Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson."
+			desc: <>Vous pouvez nous trouver en TSTI2D2 au lycée Vaucanson.</>
 		},
 		{
 			title: "GitHub",
-			desc: "Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter de bugs.",
+			desc: <>Le code est disponible ici, vous pouvez également apporter des suggestions et rapporter de bugs.</>,
 			link: "https://github.com/Menu-Vaucanson"
 		}
 	];
