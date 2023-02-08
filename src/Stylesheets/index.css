@@ -493,7 +493,7 @@ body {
 }
 
 .Check {
-	border-radius: 1vmax;
+	border-radius: 0.5vmax;
 	height: 4vmax;
 	width: 4vmax;
 	display: flex;
