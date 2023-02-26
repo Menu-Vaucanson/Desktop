@@ -106,7 +106,7 @@ function getMenusDate() {
 function getMenus(menus) {
 	return new Promise(resolve => {
 		axios.post(`${url}/menus`, { 'pc': true, 'days': menus }).catch(err => {
-			console.log(err);
+			console.error(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {

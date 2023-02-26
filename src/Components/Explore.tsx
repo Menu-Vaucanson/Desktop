@@ -125,7 +125,7 @@ function getMenus(menus: Array<any>) {
 
 	return new Promise(resolve => {
 		axios.post(`${url}/menus`, { 'pc': true, 'days': Menus }).catch(err => {
-			console.log(err);
+			console.error(err);
 			resolve(null);
 		}).then(response => {
 			if (typeof response == 'undefined') {
