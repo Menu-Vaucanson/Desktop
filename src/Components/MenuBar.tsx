@@ -27,7 +27,7 @@ function MenuBar({ theme }) {
 				<img className='MenuLogo' src={Logo} alt='Logo' />
 			</a>
 		</div>
-	)
+	);
 }
 
 

@@ -8,9 +8,7 @@ function Settings({ theme, setTheme }) {
 
 	function DarkClick() {
 		let temp = theme;
-		if (temp == null) {
-			temp = 'dark';
-		} else if (temp === 'light') {
+		if (temp == null || temp === 'light') {
 			temp = 'dark';
 		} else {
 			temp = 'light';
