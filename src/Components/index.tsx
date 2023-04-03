@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
+import Contact from './Contact';
+import E404 from './E404';
+import Explore from './Explore';
+import Informations from './Informations';
+import Legal from './Legal';
 import Menu from './Menu';
 import MenuBar from './MenuBar';
-import E404 from './E404';
-import Settings from './Settings';
-import Informations from './Informations';
-import Contact from './Contact';
-import Explore from './Explore';
 import Security from './Security';
-import Legal from './Legal';
+import Settings from './Settings';
 
 function Index() {
-	const [theme, settheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
+	const [theme, setTheme] = useState(JSON.parse(window.localStorage.getItem('theme') as string));
 
 	if (theme === 'dark') {
 		// @ts-ignore
@@ -44,7 +44,7 @@ function Index() {
 			element: <Security />
 		}, {
 			path: '/Settings',
-			element: <Settings theme={theme} settheme={settheme} />
+			element: <Settings theme={theme} setTheme={setTheme} />
 		}, {
 			path: '/*',
 			element: <E404 theme={theme} />

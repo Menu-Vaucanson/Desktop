@@ -7,13 +7,13 @@ function getDate(date: string) {
 	if (MenuDate.getDay() === 1) {
 		return 'Lundi';
 	} else if (MenuDate.getDay() === 2) {
-		return 'Mardi'
+		return 'Mardi';
 	} else if (MenuDate.getDay() === 3) {
-		return 'Mercredi'
+		return 'Mercredi';
 	} else if (MenuDate.getDay() === 4) {
-		return 'Jeudi'
+		return 'Jeudi';
 	} else if (MenuDate.getDay() === 5) {
-		return 'Vendredi'
+		return 'Vendredi';
 	} else {
 		return 'Menu du ' + date;
 	}
@@ -26,11 +26,11 @@ function getDateEvening(date: string) {
 	if (MenuDate.getDay() === 1) {
 		return 'Lundi soir';
 	} else if (MenuDate.getDay() === 2) {
-		return 'Mardi soir'
+		return 'Mardi soir';
 	} else if (MenuDate.getDay() === 3) {
-		return 'Mercredi soir'
+		return 'Mercredi soir';
 	} else if (MenuDate.getDay() === 4) {
-		return 'Jeudi soir'
+		return 'Jeudi soir';
 	} else {
 		return 'Menu du ' + date + ' au soir';
 	}
@@ -44,7 +44,7 @@ function MenuComp({ data, theme }) {
 
 	data.forEach((menu: any, i: number) => {
 		let Class = 'MenuAnimated' + i + ' Menu';
-		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2))
+		const date = new Date(menu.date.substring(6, 10), menu.date.substring(3, 5) - 1, menu.date.substring(0, 2));
 		const now = new Date();
 		if (new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime() > date.getTime()) {
 			Class += ' MenuPasted';
@@ -118,7 +118,7 @@ function MenuComp({ data, theme }) {
 				{menusEvening}
 			</div>
 		</div>
-	)
+	);
 }
 
 export default MenuComp;

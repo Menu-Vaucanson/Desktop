@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -103,7 +102,7 @@ function getMenusDate() {
 	return menus;
 }
 
-function getMenus(menus) {
+function getMenus(menus: Array<any>) {
 	return new Promise(resolve => {
 		axios.post(`${url}/menus`, { 'pc': true, 'days': menus }).catch(err => {
 			console.error(err);
@@ -133,14 +132,14 @@ function Menu({ theme }) {
 			<div className={theme === 'dark' ? 'WaitingError WaitingErrorDark' : "WaitingError"}>
 				Récupération des menus en cours...
 			</div>
-		</div >
+		</div>
 	);
 
 	useEffect(() => {
 		const cache = JSON.parse(sessionStorage.getItem('menuCache') as string);
 		if (cache) {
 			if (!cache.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+				if (new Date().getDay() === 6 || new Date().getDay() === 0) {
 					setMenu(
 						<div className="MenuWaiting">
 							<div className="WaitingError">
@@ -170,10 +169,10 @@ function Menu({ theme }) {
 				if (!d?.error) {
 					datas.push(d.data);
 				}
-			})
+			});
 			sessionStorage.setItem('menuCache', JSON.stringify(datas));
 			if (!datas.length) {
-				if (new Date().getDay() == 6 || new Date().getDay() == 0) {
+				if (new Date().getDay() === 6 || new Date().getDay() === 0) {
 					setMenu(
 						<div className="MenuWaiting">
 							<div className="WaitingError">
@@ -195,7 +194,8 @@ function Menu({ theme }) {
 			}
 			setMenu(<MenuComp data={datas} theme={theme} />);
 		})
-	}, [theme])
+	}, [theme]);
+
 	return (
 		<div className={theme === 'dark' ? 'Main MainDark' : "Main"}>
 			{menu}

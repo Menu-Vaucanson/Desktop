@@ -1,18 +1,9 @@
 import { Link } from "react-router-dom";
 
 function InfoBox({ info, className }) {
-	if (info.contact) {
+	if (info.link) {
 		return (
-			<Link to={'/Contact'} className={"InfoBox InfoBoxContact " + className}>
-				<div className="InfoBoxTitle">{info.title}</div>
-				{info.desc}
-			</Link>
-		);
-	}
-
-	if (info.legal) {
-		return (
-			<Link to={'/Legal'} className={"InfoBox InfoBoxContact " + className}>
+			<Link to={info.link} className={"InfoBox InfoBoxContact " + className}>
 				<div className="InfoBoxTitle">{info.title}</div>
 				{info.desc}
 			</Link>
@@ -32,12 +23,12 @@ function Informations({ theme }) {
 		{
 			title: "Contact",
 			desc: "Vous pouvez nous contacter en cliquant ici.",
-			contact: true
+			link: '/Contact'
 		},
 		{
 			title: "Légal",
 			desc: "Cliquez ici pour accéder aux mentions légales.",
-			legal: true
+			link: '/Legal'
 		},
 		{
 			title: "Le code",
@@ -60,11 +51,7 @@ function Informations({ theme }) {
 	return (
 		<div className={theme === 'dark' ? "Informations InformationsDark" : 'Informations'}>
 			{infos.map((info, i) => {
-				let customClass = 'InfoBoxAnimate' + i;
-				if (info.contact) {
-					return <InfoBox key={i} info={info} className={customClass} />
-				}
-				return <InfoBox key={i} info={info} className={customClass} />
+				return (<InfoBox key={i} info={info} className={'InfoBoxAnimate' + i} />);
 			})}
 		</div>
 	);

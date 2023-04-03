@@ -43,7 +43,7 @@ function Contact({ theme }) {
 				return <InfoBox className={"ContactBoxAnimated" + i} key={i} title={info.title} desc={info.desc} link={info.link} />
 			})}
 		</div>
-	)
+	);
 }
 
 export default Contact;

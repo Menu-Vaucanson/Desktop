@@ -1,19 +1,19 @@
 import blue from '../Themes/Light/blue';
-import red from '../Themes/Light/red';
 import green from '../Themes/Light/green';
+import red from '../Themes/Light/red';
 import yellow from '../Themes/Light/yellow';
 
 import blueDark from '../Themes/Dark/blueDark';
-import redDark from '../Themes/Dark/redDark';
 import greenDark from '../Themes/Dark/greenDark';
+import redDark from '../Themes/Dark/redDark';
 import yellowDark from '../Themes/Dark/yellowDark';
 
 import halloween from '../Themes/Dark/halloweenDark';
 import halloweenDark from '../Themes/Light/halloween';
 
 import ChristmasBlue from '../Themes/Light/ChristmasBlue';
-import ChristmasRed from '../Themes/Light/ChristmasRed';
 import ChristmasGreen from '../Themes/Light/ChristmasGreen';
+import ChristmasRed from '../Themes/Light/ChristmasRed';
 import ChristmasYellow from '../Themes/Light/ChristmasYellow';
 
 
@@ -65,9 +65,7 @@ function Dish({ data, theme }) {
 	return (
 		<div className="Dish" style={css}>
 			<div className="DishTitle">{data.name}</div>
-			<div className='DishContent'>
-				{data.content}
-			</div>
+			<div className="DishContent">{data.content}</div>
 		</div>
 	);
 }

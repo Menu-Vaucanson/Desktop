@@ -2,13 +2,8 @@ import { useState } from 'react';
 
 import CustomCheck from './CustomCheck';
 
-function Settings({ theme, settheme }) {
-	let defaulttheme = 0;
-	if (theme === 'dark') {
-		defaulttheme = 1;
-	}
-
-	const [Setting1, setSetting1] = useState(defaulttheme);
+function Settings({ theme, setTheme }) {
+	const [Setting1, setSetting1] = useState(theme === 'dark' ? 1 : 0);
 	const [Setting2, setSetting2] = useState(JSON.parse(window.localStorage.getItem('evening') as string));
 
 	function DarkClick() {
@@ -21,7 +16,7 @@ function Settings({ theme, settheme }) {
 			temp = 'light';
 		}
 		window.localStorage.setItem('theme', JSON.stringify(temp));
-		settheme(temp);
+		setTheme(temp);
 		setSetting1(old => old ? 0 : 1);
 	}
 
@@ -31,7 +26,7 @@ function Settings({ theme, settheme }) {
 			temp = false;
 		}
 		window.localStorage.setItem('evening', JSON.stringify(!temp));
-		setSetting2(old => !old);
+		setSetting2((old: boolean) => !old);
 	}
 
 	function CleanClick() {
@@ -41,7 +36,7 @@ function Settings({ theme, settheme }) {
 	function DeleteClick() {
 		setSetting1(0);
 		setSetting2(0);
-		settheme('light');
+		setTheme('light');
 		window.sessionStorage.clear();
 		window.localStorage.clear();
 	}

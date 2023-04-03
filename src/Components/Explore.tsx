@@ -165,7 +165,7 @@ function Explore({ theme }) {
 					if (!d?.error) {
 						datas.push(d.data);
 					}
-				})
+				});
 				if (!datas.length) {
 					setMenu(
 						<div className="ExploreHeaderBox">

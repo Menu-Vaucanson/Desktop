@@ -17,9 +17,7 @@ function MenuBar({ theme }) {
 	return (
 		<div className={theme === 'dark' ? "MenuBar MenuBarDark" : "MenuBar"}>
 			<SideMenu theme={theme} state={Active} callback={setActive} />
-			<div className={theme === 'dark' ? "MenuButton MenuButtonDark" : "MenuButton"} onClick={() => {
-				setActive(old => { return !old });
-			}}>
+			<div className={theme === 'dark' ? "MenuButton MenuButtonDark" : "MenuButton"} onClick={() => setActive(old => !old)}>
 				<div></div>
 				<div style={css1}></div>
 				<div style={css2}></div>
@@ -28,7 +26,7 @@ function MenuBar({ theme }) {
 			<a className='MenuLogo' href='https://www.yout-ube.com/watch?v=dQw4w9WgXcQ'>
 				<img className='MenuLogo' src={Logo} alt='Logo' />
 			</a>
-		</div >
+		</div>
 	)
 }
 
