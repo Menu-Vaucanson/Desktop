@@ -25,7 +25,7 @@ function MonthComp({ callback, theme, oldDate }) {
 
 	const week = isNaN(weekNumber(oldDate)) ? weekNumber(new Date()) : weekNumber(oldDate);
 	return (
-		<input onChange={change} className={theme === 'dark' ? 'MonthSelection MonthSelectionDark' : 'MonthSelection'} id="week" type="week" defaultValue={oldDate.getFullYear() + '-W' + week} />
+		<input onChange={change} className={theme === 'dark' ? 'MonthSelection MonthSelectionDark' : 'MonthSelection'} id="week" type="week" defaultValue={oldDate.getFullYear() + '-W' + (week + 1)} />
 	);
 }
 
